@@ -1,25 +1,29 @@
 /*
-*   math-calc v0.1.0
+*   math-calc v0.1.11
 *   https://github.com/zloid
 */
 
 ;(() => {
 
     let screenObj = document.querySelector('#calcScreen'),
-        buttonsArr = document.querySelectorAll('#calcButtonsNum > button,#calcButtonsOperators > button'),
+        buttonsArr = document.querySelectorAll('#calcButtonsNum > button, #calcButtonsOperators > button'),
         evalButtonObj = document.querySelector('#eval'),
         backspaceButtonObj = document.querySelector('#backspace'),
         forwardspaceButtonObj = document.querySelector('#forwardspace'),
         clearAllButtonObj = document.querySelector('#clearAll'),
-        firstClick = false,
+        backStepButtonObj = document.querySelector('#backStep'),
+        backStepMemoStr = screenObj.innerHTML,
+        // saveMemo,
         addCharFromRightBool = true;
 
     //FUNCTIONS
-    function clearAll () {
-        firstClick ? (screenObj.innerHTML = '0') : (screenObj.innerHTML = '');
-        screenObj.style.color = '#fff';
-        firstClick = true;
+    function clearAll () {        
+        screenObj.style.color = '#fff';        
         addCharFromRightBool = true;
+        // saveMemo = screenObj.innerHTML;
+        savePrevScreenResult();  
+        screenObj.innerHTML = '0';
+        // backStepMemoStr = saveMemo;
     }
 
     function clearErrorFromScreen () {
@@ -30,13 +34,14 @@
     }
 
     function addCharFromLeft (key) {
+        backStepMemoStr = screenObj.innerHTML
         buttonsArr[key].innerHTML.match(/\d/)
             ? screenObj.innerHTML = buttonsArr[key].innerHTML + screenObj.innerHTML
-            : screenObj.innerHTML += buttonsArr[key].innerHTML, addCharFromRightBool = true;
+            : screenObj.innerHTML += buttonsArr[key].innerHTML;
     }
 
-    function addButtonsValueOnScreen (key) {
-        // firstClick || clearAll();
+    function addButtonsValueOnScreen (key) {        
+        buttonsArr[key].innerHTML.match(/\D/) && (addCharFromRightBool = true);
         clearErrorFromScreen();
         addCharFromRightBool
             ? screenObj.innerHTML += buttonsArr[key].innerHTML
@@ -53,7 +58,7 @@
         middleStr = middleStr.replace(/^0(\d|[(])/, '$1');
         //begin > 012 > 12; + 02 > + 2
         middleStr = middleStr.replace(/([+-]|÷|\*)\s*0(\d)/, '$1 $2');
-        //++ -- // *** > + - * /
+        //++ -- ÷÷ *** +-÷  > + - * ÷
         middleStr = middleStr.replace(/(\s*\+\s*|\s*-\s*|\s*÷\s*|\s*\*\s*)+/g, ' $1 ');
         //.... > . > (( > ( > )) > )
         middleStr = middleStr.replace(/(\.|\(|\))+/g, '$1');
@@ -74,6 +79,7 @@
     }
 
     function toEvaluate () {
+        savePrevScreenResult();                
         // * 5 > 5 * 5 ; ÷ 5 > 5 ÷ 5
         screenObj.innerHTML = screenObj.innerHTML.replace(/^\s*(\*|÷)\s*(\d+)/, '$2 $1 $2 ');
         //5 * > 5 * 5 ; 5 ÷ > 5 ÷ 5
@@ -87,7 +93,7 @@
             : screenObj.innerHTML = eval(middleValue);
     }
 
-    function doBackspace () {
+    function doBackspace () {        
         clearErrorFromScreen();
         screenObj.innerHTML = screenObj.innerHTML.trim();
         screenObj.innerHTML = screenObj.innerHTML.slice(0, -1);
@@ -96,7 +102,7 @@
         addCharFromRightBool = true;
     }
 
-    function doForwardspace () {
+    function doForwardspace () {        
         clearErrorFromScreen();
         screenObj.innerHTML = screenObj.innerHTML.trim();
         screenObj.innerHTML = screenObj.innerHTML.slice(1);
@@ -105,22 +111,25 @@
         screenObj.innerHTML == '' && (screenObj.innerHTML = '0', addCharFromRightBool = true);
     }
 
+    function savePrevScreenResult () {
+        // clearErrorFromScreen();
+        backStepMemoStr = screenObj.innerHTML;        
+    }
+
     //EVENTS
     //clear
-    clearAllButtonObj.addEventListener('click', () => {
-        firstClick = true;
-        clearAll();
-    })
+    clearAllButtonObj.onclick = clearAll;
+    screenObj.ondblclick = clearAll;
     //clicking simple buttons
     for (let i = 0; i < buttonsArr.length; i++) {
         buttonsArr[i].addEventListener('click', () => {
+            savePrevScreenResult();
             addButtonsValueOnScreen(i)
         })
     }
     //to evaluate
-    evalButtonObj.addEventListener('click', () => {
-        toEvaluate()
-    });
+    evalButtonObj.onclick = toEvaluate;
+    screenObj.onclick = toEvaluate;
     //backspace
     backspaceButtonObj.addEventListener('click', () => {
         addCharFromRightBool = true;
@@ -130,6 +139,19 @@
     forwardspaceButtonObj.addEventListener('click', () => {
         addCharFromRightBool = false;
         doForwardspace();
+    })
+    //backStepButtonObj click
+    backStepButtonObj.addEventListener('click', () => {
+        screenObj.style.color = '#fff';
+        screenObj.innerHTML = backStepMemoStr;
+    })
+    //backStepButtonObj hover
+    backStepButtonObj.addEventListener('mouseover', () => {
+        backStepButtonObj.innerHTML = backStepMemoStr;
+    })
+    //backStepButtonObj on hover
+    backStepButtonObj.addEventListener('mouseout', () => {
+        backStepButtonObj.innerHTML = 'Return';
     })
 
 })();
