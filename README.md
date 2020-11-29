@@ -1,9 +1,148 @@
-# math-calc v0.1.12
+<!-- Information about the project to be edited by hand -->
 
-<h2>Features</h2>
-<ul>
-    <li>Backspace delete and forward space delete</li>
-    <li>Click on calc's screen for get result (=)</li>
-    <li>Double click on calc's screen for Clear</li>
-    <li>Return last step button</li>
-</ul>    
+# modern vanilla JS math calc
+
+## Features for Developers
+
+-   This App based on predictable Flux architecture
+-   Focused on modern JS
+-   Used optional type checking by JSDoc + VSCode + Typescript (tsc)
+-   HTML-in-JS (plain HTML in plain JS) instead of JSX
+-   Bootstrap (without jquery and popper.js) for simple CSS
+-   Bootstrap's CSS is reducing with Auto-Purge, while build creating
+-   Separation of App logic and UI
+-   Components architecture, rely on predictable RTK style
+-   All RTK features: Redux Dev Tools, slices, immer, etc.
+-   Jest and @testing-library/dom for tests
+-   @babel for: es6 to es5 and correct work with jest & ESM modules
+-   Automatic generation of html documentation from JSDoc + docdash as a nice looking template for JSDoc
+-   Automatic README.md generation from JSDoc
+-   Husky: for hooks
+
+## You can
+
+-   git clone [this_repo_url] && cd [repo_name] && npm i (install this repo on your machine)
+-   npm run test (for tests)
+-   npm run lint (for analysis code in /src by ESLint + type checking by JSDoc + VSCode + tsc)
+-   npm run start (for run dev server)
+-   npm run build (for creating public build, index.html is autogenerate)
+-   npm run docs (for create html docs for app by JSDoc and md-docs by jsdoc-to-markdown)
+-   npm run serve (for run app local server and www)
+-   use VSC + Extensions: "Comment tagged templates", "lit-html", for best expierence with HTML-in-JS template literals
+
+<!-- You do not need to touch the code below. This is automatic README.md generation -->
+<!-- check out https://github.com/jsdoc2md for learn more -->
+
+## API Reference
+
+## Modules
+
+| Module                        | Description |
+| ----------------------------- | ----------- |
+| [components-Button]           |
+| [components-GithubCorner]     |
+| [utils-DOMDidMount]           |
+| [utils-keyboardEventListener] |
+| [utils-mapAllDispatch]        |
+
+## components-Button
+
+### components-Button~Button(props)
+
+Presentational component
+
+**Kind**: inner method of [`components-Button`]  
+**Returns**: `string` - template literal: bootstrap .col + custom html button
+
+| Param               | Type     | Description                                                                                           |
+| ------------------- | -------- | ----------------------------------------------------------------------------------------------------- |
+| props               | `Object` |                                                                                                       |
+| \[props.role\]      | `string` | HTML role attribute                                                                                   |
+| \[props.className\] | `string` | HTML class attribute                                                                                  |
+| \[props.eventType\] | `string` | HTML attribute named on-eventtype, specify an on-event handler for a particular event (such as click) |
+| \[props.event\]     | `string` | Event target                                                                                          |
+| \[props.nodeText\]  | `string` | HTMLElement.innerText                                                                                 |
+
+**Example**
+
+```js
+${Button({
+            role: 'appButtonIncrement',
+            className: 'app-btn btn btn-outline-success btn-lg btn-block',
+            eventType: 'ondblclick',
+            event: 'globalThis.mapAllDispatch.incrementDecrement.increment()',
+            nodeText: '+',
+})}
+```
+
+## components-GithubCorner
+
+### components-GithubCorner~GithubCorner(linkToRepo)
+
+Presentational component
+
+**Kind**: inner method of [`components-GithubCorner`]  
+**Returns**: `string` - template literal: octoCat svg + link to repo
+
+| Param      | Type     | Description               |
+| ---------- | -------- | ------------------------- |
+| linkToRepo | `string` | link to github repository |
+
+**Example**
+
+```js
+${GithubCorner('https://github.com/')}
+```
+
+## utils-DOMDidMount
+
+### utils-DOMDidMount~DOMDidMount()
+
+Return eventListener -DOMContentLoaded- for window obj. The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
+
+**Kind**: inner method of [`utils-DOMDidMount`]  
+**Example**
+
+```js
+// keyboardEventListener()
+DOMDidMount()
+```
+
+## utils-keyboardEventListener
+
+### utils-keyboardEventListener~keyboardEventListener()
+
+Function which define EventListener for catching Keyboard and NumPad buttons: + - delete backspace; and ignoring all f-buttons on keyboard
+
+**Kind**: inner method of [`utils-keyboardEventListener`]  
+**Returns**: `string` - an empty string  
+**Example**
+
+```js
+// click on keyboard [+] ~> -increment-
+// click on keyboard [-] ~> -decrement-
+// click on keyboard [delete] ~> -clear all-
+keyboardEventListener()
+```
+
+## utils-mapAllDispatch
+
+### utils-mapAllDispatch~Connect
+
+Connect
+library for compose RTK actions
+
+**Kind**: inner class of [`utils-mapAllDispatch`]
+
+<!-- LINKS -->
+
+[components-button]: #components-button
+[components-githubcorner]: #components-githubcorner
+[utils-domdidmount]: #utils-domdidmount
+[utils-keyboardeventlistener]: #utils-keyboardeventlistener
+[utils-mapalldispatch]: #utils-mapalldispatch
+[`components-button`]: #components-button
+[`components-githubcorner`]: #components-githubcorner
+[`utils-domdidmount`]: #utils-domdidmount
+[`utils-keyboardeventlistener`]: #utils-keyboardeventlistener
+[`utils-mapalldispatch`]: #utils-mapalldispatch
