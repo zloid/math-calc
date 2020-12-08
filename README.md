@@ -35,114 +35,22 @@
 
 ## API Reference
 
-## Modules
+## app-App
 
-| Module                        | Description |
-| ----------------------------- | ----------- |
-| [components-Button]           |
-| [components-GithubCorner]     |
-| [utils-DOMDidMount]           |
-| [utils-keyboardEventListener] |
-| [utils-mapAllDispatch]        |
+### app-App~App(\[placeToRender\])
 
-## components-Button
+Returns instance of Reef.js (whole SPA)
 
-### components-Button~Button(props)
+**Kind**: inner method of `app-App`
 
-Presentational component
-
-**Kind**: inner method of [`components-Button`]  
-**Returns**: `string` - template literal: bootstrap .col + custom html button
-
-| Param               | Type     | Description                                                                                           |
-| ------------------- | -------- | ----------------------------------------------------------------------------------------------------- |
-| props               | `Object` |                                                                                                       |
-| \[props.role\]      | `string` | HTML role attribute                                                                                   |
-| \[props.className\] | `string` | HTML class attribute                                                                                  |
-| \[props.eventType\] | `string` | HTML attribute named on-eventtype, specify an on-event handler for a particular event (such as click) |
-| \[props.event\]     | `string` | Event target                                                                                          |
-| \[props.nodeText\]  | `string` | HTMLElement.innerText                                                                                 |
+| Param             | Type     | Default   |
+| ----------------- | -------- | --------- |
+| \[placeToRender\] | `string` | `'#root'` |
 
 **Example**
 
 ```js
-${Button({
-            role: 'appButtonIncrement',
-            className: 'app-btn btn btn-outline-success btn-lg btn-block',
-            eventType: 'ondblclick',
-            event: 'globalThis.mapAllDispatch.incrementDecrement.increment()',
-            nodeText: '+',
-})}
+App('#cool-root').render()
 ```
-
-## components-GithubCorner
-
-### components-GithubCorner~GithubCorner(linkToRepo)
-
-Presentational component
-
-**Kind**: inner method of [`components-GithubCorner`]  
-**Returns**: `string` - template literal: octoCat svg + link to repo
-
-| Param      | Type     | Description               |
-| ---------- | -------- | ------------------------- |
-| linkToRepo | `string` | link to github repository |
-
-**Example**
-
-```js
-${GithubCorner('https://github.com/')}
-```
-
-## utils-DOMDidMount
-
-### utils-DOMDidMount~DOMDidMount()
-
-Return eventListener -DOMContentLoaded- for window obj. The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading.
-
-**Kind**: inner method of [`utils-DOMDidMount`]  
-**Example**
-
-```js
-// keyboardEventListener()
-DOMDidMount()
-```
-
-## utils-keyboardEventListener
-
-### utils-keyboardEventListener~keyboardEventListener()
-
-Function which define EventListener for catching Keyboard and NumPad buttons: + - delete backspace; and ignoring all f-buttons on keyboard
-
-**Kind**: inner method of [`utils-keyboardEventListener`]  
-**Returns**: `string` - an empty string  
-**Example**
-
-```js
-// click on keyboard [+] ~> -increment-
-// click on keyboard [-] ~> -decrement-
-// click on keyboard [delete] ~> -clear all-
-keyboardEventListener()
-```
-
-## utils-mapAllDispatch
-
-### utils-mapAllDispatch~Connect
-
-Connect
-library for compose RTK actions
-
-**Kind**: inner class of [`utils-mapAllDispatch`]
 
 <!-- LINKS -->
-
-[components-button]: #components-button
-[components-githubcorner]: #components-githubcorner
-[utils-domdidmount]: #utils-domdidmount
-[utils-keyboardeventlistener]: #utils-keyboardeventlistener
-[utils-mapalldispatch]: #utils-mapalldispatch
-[`components-button`]: #components-button
-[`components-githubcorner`]: #components-githubcorner
-[`utils-domdidmount`]: #utils-domdidmount
-[`utils-keyboardeventlistener`]: #utils-keyboardeventlistener
-[`utils-mapalldispatch`]: #utils-mapalldispatch
