@@ -1,6 +1,6 @@
 /** @module app-App */
 import Reef from 'reefjs'
-import store from './store';
+import store from './store'
 
 /**
  * Returns instance of Reef.js (whole SPA)
@@ -16,28 +16,29 @@ const App = (placeToRender = '#root') =>
                 ${store.getState().calcLogic.displayData}
             </div>
 
-            <button role="calcBtn0">0</button>
-            <button role="calcBtn1">1</button>
-            <button role="calcBtn2">2</button>
-            <button role="calcBtn3">3</button>
-            <button role="calcBtn4">4</button>
-            <button role="calcBtn5">5</button>
-            <button role="calcBtn6">6</button>
-            <button role="calcBtn7">7</button>
-            <button role="calcBtn8">8</button>
-            <button role="calcBtn9">9</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn0">0</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn1">1</button>
 
-            <button role="calcBtnPlus">+</button>
-            <button role="calcBtnMinus">-</button>
-            <button role="calcBtnMultiply">*</button>
-            <button role="calcBtnDivision">÷</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn2">2</button>
 
-            <button role="calcBtnClear">C</button>
-            <button role="calcBtnEqual">=</button>
-            <button role="calcBtnPoint">.</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn3">3</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn4">4</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn5">5</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn6">6</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn7">7</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn8">8</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn9">9</button>
+
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnPlus">+</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnMinus">-</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnMultiply">*</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnDivision">÷</button>
+
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnClear">C</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.doEqual()" role="calcBtnEqual">=</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnPoint">.</button>
             
         </div>`,
     })
-
 
 export default App

@@ -12,8 +12,7 @@ describe('div#root', () => {
 })
 
 describe('App', () => {
-   it('calc [screen] value should be 0', () => {
-       expect(screen.getByRole(/calcMainScreen/i).textContent.trim()).toBe('0')
-   })
+    it('calc [screen] value should be 0', () => {
+        expect(screen.getByRole(/calcMainScreen/i).textContent.trim()).toBe('0')
+    })
 })
-
