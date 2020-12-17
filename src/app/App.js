@@ -1,5 +1,6 @@
 /** @module app-App */
 import Reef from 'reefjs'
+import store from './store';
 
 /**
  * Returns instance of Reef.js (whole SPA)
@@ -11,7 +12,9 @@ import Reef from 'reefjs'
 const App = (placeToRender = '#root') =>
     new Reef(placeToRender, {
         template: () => /* html */ `<div>
-            <div role="calcMainScreen"></div>
+            <div role="calcMainScreen">
+                ${store.getState().calcLogic.displayData}
+            </div>
 
             <button role="calcBtn0">0</button>
             <button role="calcBtn1">1</button>
