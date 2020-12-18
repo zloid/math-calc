@@ -5,6 +5,7 @@ import store from '../app/store'
 import {
     addButtonValueToScreen,
     doEqual,
+    clearAllFromCalcScreen,
 } from '../features/calcLogic/calcLogicSlice'
 
 /**
@@ -19,7 +20,7 @@ class Connect {
             getBtnValue: (payload) =>
                 store.dispatch(addButtonValueToScreen(payload)),
             doEqual: () => store.dispatch(doEqual()),
-            // clearAll: () => store.dispatch(clearAllFromCalcScreen()),
+            clearAll: () => store.dispatch(clearAllFromCalcScreen()),
         }
     }
 }

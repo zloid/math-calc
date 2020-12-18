@@ -3,7 +3,6 @@
 /**
  * Selector for getting calc result, main logic
  * @function selectCalcResult
- * @date 2020-09-15
  * @param {Object} state - Redux state
  * @param {string} state.displayData - data from calc screen, f.e. '2 + 456 * 9', spaces are required
  * @returns {string} result of calculation

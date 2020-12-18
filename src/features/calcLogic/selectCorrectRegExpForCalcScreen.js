@@ -3,7 +3,6 @@
 /**
  * For transpile any string to correct data for calculator screen
  * @function selectCorrectRegExpForCalcScreen
- * @date 2020-09-30
  * @param {{displayData: ''}} state - RTK state.displayData
  * @param {string} payload - action.payload, string for RegExp
  * @returns {string}

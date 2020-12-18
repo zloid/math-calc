@@ -27,9 +27,12 @@ const calcLogicSlice = createSlice({
         doEqual(state) {
             state.displayData = selectCalcResult(state)
         },
+        clearAllFromCalcScreen(state) {
+            state.displayData = '0'
+        },
     },
 })
 
-export const { addButtonValueToScreen, doEqual } = calcLogicSlice.actions
+export const { addButtonValueToScreen, doEqual, clearAllFromCalcScreen } = calcLogicSlice.actions
 
 export default calcLogicSlice.reducer

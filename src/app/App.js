@@ -34,7 +34,7 @@ const App = (placeToRender = '#root') =>
             <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnMultiply">*</button>
             <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnDivision">÷</button>
 
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnClear">C</button>
+            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.clearAll()" role="calcBtnClear">C</button>
             <button onclick="globalThis.mapAllDispatch.buttonToDisplay.doEqual()" role="calcBtnEqual">=</button>
             <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnPoint">.</button>
             
