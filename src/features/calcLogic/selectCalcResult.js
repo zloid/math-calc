@@ -15,6 +15,18 @@
  */
 export const selectCalcResult = ({ displayData }) => {
     /**
+     * Function for handle of early data
+     * @function correctBeginOfSingleNegativeNmbr
+     * @param {string} data - from state
+     * @example
+     * // '0 - 8'
+     * correctBeginOfSingleNegativeNmbr('- 8')
+     */
+    function correctBeginOfSingleNegativeNmbr(data) {
+        return data.replace(/^-\s*(\d*)/, '0 - $1')
+    }
+
+    /**
      * Function for convert input sting to specific arrays of numbers and strings (operators and operands)
      * @function turnDisplayDataToArray
      * @param {string} data - from state
@@ -35,7 +47,6 @@ export const selectCalcResult = ({ displayData }) => {
         })
         return outputData
     }
-
 
     /**
      * Function for calc multiplication
@@ -58,6 +69,26 @@ export const selectCalcResult = ({ displayData }) => {
     }
 
     /**
+     * Function for calc division
+     * @function division
+     * @param {Array<string|number>} data - specific arrays of numbers and strings (operators and operands)
+     * @returns {Array<string|number>} specific arrays of numbers and strings
+     * @example
+     * // [7, '+', 1]
+     * division([7, '+', 4, '÷', 4])
+     */
+    function division(data) {
+        for (let i = 0; i < data.length; i++) {
+            if (data[i] === '÷') {
+                data[i + 1] = data[i - 1] / data[i + 1]
+                data[i] = data[i - 1] = null
+            }
+        }
+        // [4, '+', null, null, 1] ~> [4, '+', 1]
+        return data.filter((e) => e !== null)
+    }
+
+    /**
      * Function for calc addition
      * @function addition
      * @param {Array<string|number>} data - specific arrays of numbers and strings (operators, operands and anything else)
@@ -71,6 +102,27 @@ export const selectCalcResult = ({ displayData }) => {
         data = data.filter((e) => typeof e === 'number')
         // [2, 225] ~> 227
         return data.reduce((accum, currentVal) => accum + currentVal)
+    }
+
+    /**
+     * Function for calc subtraction
+     * @function subtraction
+     * @param {Array<string|number>} data - specific arrays of numbers and strings (operators and operands)
+     * @returns {Array<string|number>} specific arrays of numbers and strings
+     * @example
+     * // [4, '+', 33]
+     * subtraction([4, '+', 36, '-', 3])
+     */
+    function subtraction(data) {
+        // [null, null, 36, '-', 3] ~> [36, '-', 3]
+        // [36, '-', 3] ~> [33]
+        for (let i = 0; i < data.length; i++) {
+            if (data[i] === '-') {
+                data[i + 1] = data[i - 1] - data[i + 1]
+                data[i] = data[i - 1] = null
+            }
+        }
+        return data.filter((e) => e !== null)
     }
 
     /**
@@ -104,25 +156,20 @@ export const selectCalcResult = ({ displayData }) => {
     }
 
     // error handler for getting quick answer
-    //todo
-    /* 
     if (/error|nan/i.test(displayData)) {
         return 'Error'
-    }
-     */
+    }    
 
     // infinity handler for getting quick answer
-    // todo
-    /* 
     if (/^-*\s*infinity$/i.test(displayData)) {
         return displayData
     }
-   */
-    // displayData = correctBeginOfSingleNegativeNmbr(displayData)
+   
+    displayData = correctBeginOfSingleNegativeNmbr(displayData)
     displayData = turnDisplayDataToArray(displayData)
     displayData = multiplication(displayData)
-    // displayData = division(displayData)
-    // displayData = subtraction(displayData)
+    displayData = division(displayData)
+    displayData = subtraction(displayData)
     displayData = addition(displayData)
 
     return finalResult(displayData)
