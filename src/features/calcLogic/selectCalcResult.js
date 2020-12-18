@@ -36,6 +36,27 @@ export const selectCalcResult = ({ displayData }) => {
         return outputData
     }
 
+
+    /**
+     * Function for calc multiplication
+     * @function multiplication
+     * @param {Array<string|number>} data - specific arrays of numbers and strings (operators and operands)
+     * @returns {Array<string|number>} specific arrays of numbers and strings
+     * @example
+     * // [4, '+', 12]
+     * multiplication([4, '+', 3, '*', 4])
+     */
+    function multiplication(data) {
+        for (let i = 0; i < data.length; i++) {
+            if (data[i] === '*') {
+                data[i + 1] = data[i - 1] * data[i + 1]
+                data[i] = data[i - 1] = null
+            }
+        }
+        // [4, '+', null, null, 12] ~> [4, '+', 12]
+        return data.filter((e) => e !== null)
+    }
+
     /**
      * Function for calc addition
      * @function addition
@@ -99,7 +120,7 @@ export const selectCalcResult = ({ displayData }) => {
    */
     // displayData = correctBeginOfSingleNegativeNmbr(displayData)
     displayData = turnDisplayDataToArray(displayData)
-    // displayData = multiplication(displayData)
+    displayData = multiplication(displayData)
     // displayData = division(displayData)
     // displayData = subtraction(displayData)
     displayData = addition(displayData)
