@@ -1,4 +1,5 @@
 /** @module selector-selectCalcResult */
+import { pipeFunction } from '../../utils/pipeFunction'
 
 /**
  * Selector for getting calc result, main logic
@@ -158,19 +159,21 @@ export const selectCalcResult = ({ displayData }) => {
     // error handler for getting quick answer
     if (/error|nan/i.test(displayData)) {
         return 'Error'
-    }    
+    }
 
     // infinity handler for getting quick answer
     if (/^-*\s*infinity$/i.test(displayData)) {
         return displayData
     }
-   
-    displayData = correctBeginOfSingleNegativeNmbr(displayData)
-    displayData = turnDisplayDataToArray(displayData)
-    displayData = multiplication(displayData)
-    displayData = division(displayData)
-    displayData = subtraction(displayData)
-    displayData = addition(displayData)
+
+    displayData = pipeFunction([
+        correctBeginOfSingleNegativeNmbr,
+        turnDisplayDataToArray,
+        multiplication,
+        division,
+        subtraction,
+        addition,
+    ])(displayData)
 
     return finalResult(displayData)
 }

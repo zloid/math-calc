@@ -1,6 +1,6 @@
 {
     "name": "modern-vanilla-js-math-calc",
-    "version": "0.2.7",
+    "version": "0.2.8",
     "description": "math_calc",
     "main": "index.js",
     "scripts": {
@@ -60,6 +60,6 @@
     },
     "engines": {
         "node": ">=12.19.0",
-        "npm": ">=6.14.8"
+        "npm": ">=6.14.10"
     }
 }
