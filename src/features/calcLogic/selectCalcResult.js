@@ -1,5 +1,6 @@
 /** @module selector-selectCalcResult */
 import { pipeFunction } from '../../utils/pipeFunction'
+import { turnDisplayDataToArray } from './turnDisplayDataToArray'
 
 /**
  * Selector for getting calc result, main logic
@@ -7,12 +8,6 @@ import { pipeFunction } from '../../utils/pipeFunction'
  * @param {Object} state - Redux state
  * @param {string} state.displayData - data from calc screen, f.e. '2 + 456 * 9', spaces are required
  * @returns {string} result of calculation
- * @example
- * // returns: '229'
- * selectCalcResult({displayData: '2 + 225 + 2'})
- * @example
- * // returns: 'Error'
- * selectCalcResult({displayData: '0 ÷ 0'})
  */
 export const selectCalcResult = ({ displayData }) => {
     /**
@@ -25,28 +20,6 @@ export const selectCalcResult = ({ displayData }) => {
      */
     function correctBeginOfSingleNegativeNmbr(data) {
         return data.replace(/^-\s*(\d*)/, '0 - $1')
-    }
-
-    /**
-     * Function for convert input sting to specific arrays of numbers and strings (operators and operands)
-     * @function turnDisplayDataToArray
-     * @param {string} data - from state
-     * @returns {Array<string|number>} specific arrays of numbers and strings (operators and operands)
-     * @example
-     * // [2, '+', 225]
-     * turnDisplayDataToArray('2 + 225')
-     */
-    function turnDisplayDataToArray(data) {
-        // sanitizeHTML, f.e. window.mapAllDispatch.buttonToDisplay.getBtnValue(`<a href="javascript:alert(1)">this won't run</a>`)
-        data = data.replace(/<|>|\{|\}/g, '')
-
-        const outputData = data.split(' ').map((e) => {
-            if (/\d|infinity/i.test(e)) {
-                return Number(e)
-            }
-            return e
-        })
-        return outputData
     }
 
     /**

@@ -42,6 +42,7 @@ Module | Description
 [app-App] | 
 [selector-selectCalcResult] | 
 [selector-selectCorrectRegExpForCalcScreen] | 
+[calcLogic-turnDisplayDataToArray] | 
 [utils-mapAllDispatch] | 
 [utils-pipeFunction] | 
 
@@ -82,7 +83,6 @@ App('#cool-root').render()
 * [selector-selectCalcResult]
     * [~selectCalcResult(state)]
     * [~correctBeginOfSingleNegativeNmbr(data)]
-    * [~turnDisplayDataToArray(data)]
     * [~multiplication(data)]
     * [~division(data)]
     * [~addition(data)]
@@ -102,16 +102,6 @@ Selector for getting calc result, main logic
 | state | `Object` | Redux state |
 | state.displayData | `string` | data from calc screen, f.e. '2 + 456 * 9', spaces are required |
 
-**Example**  
-```js
-// returns: '229'
-selectCalcResult({displayData: '2 + 225 + 2'})
-```
-**Example**  
-```js
-// returns: 'Error'
-selectCalcResult({displayData: '0 ÷ 0'})
-```
 
 ### selector-selectCalcResult~correctBeginOfSingleNegativeNmbr(data)
 
@@ -127,23 +117,6 @@ Function for handle of early data
 ```js
 // '0 - 8'
 correctBeginOfSingleNegativeNmbr('- 8')
-```
-
-### selector-selectCalcResult~turnDisplayDataToArray(data)
-
-Function for convert input sting to specific arrays of numbers and strings (operators and operands)
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings (operators and operands)  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| data | `string` | from state |
-
-**Example**  
-```js
-// [2, '+', 225]
-turnDisplayDataToArray('2 + 225')
 ```
 
 ### selector-selectCalcResult~multiplication(data)
@@ -261,6 +234,21 @@ For transpile any string to correct data for calculator screen
  selectCorrectRegExpForCalcScreen({displayData: '0'}, '   0.....1 ++ 2214 *** 21   ')
 ```
 
+## calcLogic-turnDisplayDataToArray
+
+
+### calcLogic-turnDisplayDataToArray~turnDisplayDataToArray(data)
+
+Function for convert input sting to specific arrays of numbers and strings (operators and operands)
+
+**Kind**: inner method of [`calcLogic-turnDisplayDataToArray`]  
+**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings (operators and operands)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | `string` | from state |
+
+
 ## utils-mapAllDispatch
 
 
@@ -291,7 +279,7 @@ Singleton with all dispatch-actions
 
 ### utils-pipeFunction~pipeFunction(funcs)
 
-For pipeline a data thru all function
+For pipeline a data thru all function from first to last
 
 **Kind**: inner method of [`utils-pipeFunction`]  
 
@@ -316,6 +304,7 @@ Interface for initialState
 [app-App]:#app-app
 [selector-selectCalcResult]:#selector-selectcalcresult
 [selector-selectCorrectRegExpForCalcScreen]:#selector-selectcorrectregexpforcalcscreen
+[calcLogic-turnDisplayDataToArray]:#calclogic-turndisplaydatatoarray
 [utils-mapAllDispatch]:#utils-mapalldispatch
 [utils-pipeFunction]:#utils-pipefunction
 [initialState]:#initialstate
@@ -323,13 +312,13 @@ Interface for initialState
 [`app-App`]:#app-app
 [`selector-selectCalcResult`]:#selector-selectcalcresult
 [`selector-selectCorrectRegExpForCalcScreen`]:#selector-selectcorrectregexpforcalcscreen
+[`calcLogic-turnDisplayDataToArray`]:#calclogic-turndisplaydatatoarray
 [~Connect]:#utils-mapalldispatchconnect
 [~mapAllDispatch]:#utils-mapalldispatchmapalldispatch
 [`utils-mapAllDispatch`]:#utils-mapalldispatch
 [`utils-pipeFunction`]:#utils-pipefunction
 [~selectCalcResult(state)]:#selector-selectcalcresultselectcalcresultstate
 [~correctBeginOfSingleNegativeNmbr(data)]:#selector-selectcalcresultcorrectbeginofsinglenegativenmbrdata
-[~turnDisplayDataToArray(data)]:#selector-selectcalcresultturndisplaydatatoarraydata
 [~multiplication(data)]:#selector-selectcalcresultmultiplicationdata
 [~division(data)]:#selector-selectcalcresultdivisiondata
 [~addition(data)]:#selector-selectcalcresultadditiondata
