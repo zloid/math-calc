@@ -1,4 +1,4 @@
-import { correctBeginOfSingleNegativeNmbr } from '../../../src/features/calcLogic/correctBeginOfSingleNegativeNmbr';
+import { correctBeginOfSingleNegativeNmbr } from '../../../src/features/calcLogic/correctBeginOfSingleNegativeNmbr'
 
 describe('correctBeginOfSingleNegativeNmbr', () => {
     it('should pass', () => {

@@ -2,7 +2,7 @@
 import { pipeFunction } from '../../utils/pipeFunction'
 import { turnDisplayDataToArray } from './turnDisplayDataToArray'
 import { correctBeginOfSingleNegativeNmbr } from './correctBeginOfSingleNegativeNmbr'
-import { finalResult } from './finalResult';
+import { finalResult } from './finalResult'
 
 /**
  * Selector for getting calc result, main logic
@@ -88,7 +88,6 @@ export const selectCalcResult = ({ displayData }) => {
         }
         return data.filter((e) => e !== null)
     }
-
 
     // error handler for getting quick answer
     if (/error|nan/i.test(displayData)) {

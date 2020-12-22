@@ -5,6 +5,7 @@
  * @function finalResult
  * @param {number} data - final answer
  * @returns {string} correct final answer
+ * @example @see [test]{@link https://github.com/zloid/math-calc/blob/master/__tests__/calcAppLogic/functions/finalResult.test.js}
  */
 export function finalResult(data) {
     // avoiding 0.1 + 0.2

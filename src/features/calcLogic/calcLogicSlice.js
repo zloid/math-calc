@@ -33,6 +33,10 @@ const calcLogicSlice = createSlice({
     },
 })
 
-export const { addButtonValueToScreen, doEqual, clearAllFromCalcScreen } = calcLogicSlice.actions
+export const {
+    addButtonValueToScreen,
+    doEqual,
+    clearAllFromCalcScreen,
+} = calcLogicSlice.actions
 
 export default calcLogicSlice.reducer

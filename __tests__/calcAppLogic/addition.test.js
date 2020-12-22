@@ -135,6 +135,8 @@ describe('calc App addition logic', () => {
         // equal
         fireEvent.click(screen.getByRole(/^calcBtnEqual$/i))
         // calc screen result
-        expect(screen.getByRole(/calcMainScreen/i).textContent.trim()).toBe('45')
+        expect(screen.getByRole(/calcMainScreen/i).textContent.trim()).toBe(
+            '45'
+        )
     })
 })
