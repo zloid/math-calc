@@ -1,6 +1,8 @@
 /** @module selector-selectCalcResult */
 import { pipeFunction } from '../../utils/pipeFunction'
 import { turnDisplayDataToArray } from './turnDisplayDataToArray'
+import { correctBeginOfSingleNegativeNmbr } from './correctBeginOfSingleNegativeNmbr'
+import { finalResult } from './finalResult';
 
 /**
  * Selector for getting calc result, main logic
@@ -10,18 +12,6 @@ import { turnDisplayDataToArray } from './turnDisplayDataToArray'
  * @returns {string} result of calculation
  */
 export const selectCalcResult = ({ displayData }) => {
-    /**
-     * Function for handle of early data
-     * @function correctBeginOfSingleNegativeNmbr
-     * @param {string} data - from state
-     * @example
-     * // '0 - 8'
-     * correctBeginOfSingleNegativeNmbr('- 8')
-     */
-    function correctBeginOfSingleNegativeNmbr(data) {
-        return data.replace(/^-\s*(\d*)/, '0 - $1')
-    }
-
     /**
      * Function for calc multiplication
      * @function multiplication
@@ -99,35 +89,6 @@ export const selectCalcResult = ({ displayData }) => {
         return data.filter((e) => e !== null)
     }
 
-    /**
-     * For correct final result calculation
-     * @function finalResult
-     * @param {number} data - final answer
-     * @returns {string} correct final answer
-     * @example
-     * // 'Error'
-     * finalResult(NaN)
-     * @example
-     * // '- 876'
-     * finalResult(-876)
-     * @example
-     * // '0.3'
-     * finalResult(0.30000000000000004)
-     */
-    function finalResult(data) {
-        // avoiding 0.1 + 0.2
-        data = parseFloat(data.toFixed(11))
-        data = String(data)
-        switch (true) {
-            case /nan/i.test(data):
-                return 'Error'
-            case /^-./.test(data):
-                // '-876' ~> '- 876'
-                return data.replace(/^-(.)/, '- $1')
-            default:
-                return data
-        }
-    }
 
     // error handler for getting quick answer
     if (/error|nan/i.test(displayData)) {
