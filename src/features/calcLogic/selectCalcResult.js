@@ -10,6 +10,7 @@ import { finalResult } from './finalResult'
  * @param {Object} state - Redux state
  * @param {string} state.displayData - data from calc screen, f.e. '2 + 456 * 9', spaces are required
  * @returns {string} result of calculation
+ * @example @see [test]{@link https://github.com/zloid/math-calc/blob/master/__tests__/calcAppLogic/functions/selectCalcResult.test.js}
  */
 export const selectCalcResult = ({ displayData }) => {
     /**
