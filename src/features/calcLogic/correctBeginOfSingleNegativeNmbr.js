@@ -1,4 +1,4 @@
-/**@module calcLogic-correctBeginOfSingleNegativeNmbr */
+/** @module selector-selectCalcResult */
 
 /**
  * Function for handle of early data
