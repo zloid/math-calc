@@ -1,4 +1,4 @@
-/**@module calcLogic-finalResult */
+/** @module selector-selectCalcResult-finalResult */
 
 /**
  * For correct final result calculation

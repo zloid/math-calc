@@ -1,4 +1,4 @@
-/** @module selector-selectCalcResult */
+/** @module selector-selectCalcResult-division */
 
 /**
  * Function for calc division

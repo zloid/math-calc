@@ -1,4 +1,4 @@
-/** @module selector-selectCalcResult */
+/** @module selector-selectCalcResult-addition */
 
 /**
  * Function for calc addition

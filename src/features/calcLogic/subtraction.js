@@ -1,4 +1,4 @@
-/** @module selector-selectCalcResult */
+/** @module selector-selectCalcResult-subtraction */
 
 /**
  * Function for calc subtraction

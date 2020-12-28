@@ -1,4 +1,5 @@
-/** @module selector-selectCalcResult */
+/** @module selector-selectCalcResult-multiplication */
+
 /**
  * Function for calc multiplication
  * @function multiplication

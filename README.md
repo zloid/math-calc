@@ -37,20 +37,20 @@
 
 ## Modules
 
-| Module                                      | Description |
-| ------------------------------------------- | ----------- |
-| [app-App]                                   |
-| [selector-selectCalcResult]                 |
-| [selector-selectCalcResult]                 |
-| [selector-selectCalcResult]                 |
-| [calcLogic-finalResult]                     |
-| [selector-selectCalcResult]                 |
-| [selector-selectCalcResult]                 |
-| [selector-selectCorrectRegExpForCalcScreen] |
-| [selector-selectCalcResult]                 |
-| [calcLogic-turnDisplayDataToArray]          |
-| [utils-mapAllDispatch]                      |
-| [utils-pipeFunction]                        |
+| Module                                                       | Description |
+| ------------------------------------------------------------ | ----------- |
+| [app-App]                                                    |
+| [selector-selectCalcResult-addition]                         |
+| [selector-selectCalcResult-correctBeginOfSingleNegativeNmbr] |
+| [selector-selectCalcResult-division]                         |
+| [selector-selectCalcResult-finalResult]                      |
+| [selector-selectCalcResult-multiplication]                   |
+| [selector-selectCalcResult]                                  |
+| [selector-selectCorrectRegExpForCalcScreen]                  |
+| [selector-selectCalcResult-subtraction]                      |
+| [selector-selectCalcResult-turnDisplayDataToArray]           |
+| [utils-mapAllDispatch]                                       |
+| [utils-pipeFunction]                                         |
 
 ## Constants
 
@@ -82,21 +82,13 @@ Returns instance of Reef.js (whole SPA)
 App('#cool-root').render()
 ```
 
-## selector-selectCalcResult
+## selector-selectCalcResult-addition
 
--   [selector-selectCalcResult]
-    -   [~addition(data)]
-    -   [~correctBeginOfSingleNegativeNmbr(data)]
-    -   [~division(data)]
-    -   [~multiplication(data)]
-    -   [~selectCalcResult(state)]
-    -   [~subtraction(data)]
-
-### selector-selectCalcResult~addition(data)
+### selector-selectCalcResult-addition~addition(data)
 
 Function for calc addition
 
-**Kind**: inner method of [`selector-selectCalcResult`]  
+**Kind**: inner method of [`selector-selectCalcResult-addition`]  
 **Returns**: `number` - result of addition all numbers in Array
 
 | Param | Type            | Description |
@@ -109,11 +101,13 @@ Function for calc addition
 @see [test]
 ```
 
-### selector-selectCalcResult~correctBeginOfSingleNegativeNmbr(data)
+## selector-selectCalcResult-correctBeginOfSingleNegativeNmbr
+
+### selector-selectCalcResult-correctBeginOfSingleNegativeNmbr~correctBeginOfSingleNegativeNmbr(data)
 
 Function for handle of early data
 
-**Kind**: inner method of [`selector-selectCalcResult`]
+**Kind**: inner method of [`selector-selectCalcResult-correctBeginOfSingleNegativeNmbr`]
 
 | Param | Type     | Description |
 | ----- | -------- | ----------- |
@@ -125,11 +119,13 @@ Function for handle of early data
 @see [test]
 ```
 
-### selector-selectCalcResult~division(data)
+## selector-selectCalcResult-division
+
+### selector-selectCalcResult-division~division(data)
 
 Function for calc division
 
-**Kind**: inner method of [`selector-selectCalcResult`]  
+**Kind**: inner method of [`selector-selectCalcResult-division`]  
 **Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
 
 | Param | Type            | Description |
@@ -142,289 +138,13 @@ Function for calc division
 @see [test]
 ```
 
-### selector-selectCalcResult~multiplication(data)
+## selector-selectCalcResult-finalResult
 
-Function for calc multiplication
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~selectCalcResult(state)
-
-Selector for getting calc result, main logic
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `string` - result of calculation
-
-| Param             | Type     | Description                                                     |
-| ----------------- | -------- | --------------------------------------------------------------- |
-| state             | `Object` | Redux state                                                     |
-| state.displayData | `string` | data from calc screen, f.e. '2 + 456 \* 9', spaces are required |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~subtraction(data)
-
-Function for calc subtraction
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-## selector-selectCalcResult
-
--   [selector-selectCalcResult]
-    -   [~addition(data)]
-    -   [~correctBeginOfSingleNegativeNmbr(data)]
-    -   [~division(data)]
-    -   [~multiplication(data)]
-    -   [~selectCalcResult(state)]
-    -   [~subtraction(data)]
-
-### selector-selectCalcResult~addition(data)
-
-Function for calc addition
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `number` - result of addition all numbers in Array
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators, operands and anything else) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~correctBeginOfSingleNegativeNmbr(data)
-
-Function for handle of early data
-
-**Kind**: inner method of [`selector-selectCalcResult`]
-
-| Param | Type     | Description |
-| ----- | -------- | ----------- |
-| data  | `string` | from state  |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~division(data)
-
-Function for calc division
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~multiplication(data)
-
-Function for calc multiplication
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~selectCalcResult(state)
-
-Selector for getting calc result, main logic
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `string` - result of calculation
-
-| Param             | Type     | Description                                                     |
-| ----------------- | -------- | --------------------------------------------------------------- |
-| state             | `Object` | Redux state                                                     |
-| state.displayData | `string` | data from calc screen, f.e. '2 + 456 \* 9', spaces are required |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~subtraction(data)
-
-Function for calc subtraction
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-## selector-selectCalcResult
-
--   [selector-selectCalcResult]
-    -   [~addition(data)]
-    -   [~correctBeginOfSingleNegativeNmbr(data)]
-    -   [~division(data)]
-    -   [~multiplication(data)]
-    -   [~selectCalcResult(state)]
-    -   [~subtraction(data)]
-
-### selector-selectCalcResult~addition(data)
-
-Function for calc addition
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `number` - result of addition all numbers in Array
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators, operands and anything else) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~correctBeginOfSingleNegativeNmbr(data)
-
-Function for handle of early data
-
-**Kind**: inner method of [`selector-selectCalcResult`]
-
-| Param | Type     | Description |
-| ----- | -------- | ----------- |
-| data  | `string` | from state  |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~division(data)
-
-Function for calc division
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~multiplication(data)
-
-Function for calc multiplication
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~selectCalcResult(state)
-
-Selector for getting calc result, main logic
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `string` - result of calculation
-
-| Param             | Type     | Description                                                     |
-| ----------------- | -------- | --------------------------------------------------------------- |
-| state             | `Object` | Redux state                                                     |
-| state.displayData | `string` | data from calc screen, f.e. '2 + 456 \* 9', spaces are required |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~subtraction(data)
-
-Function for calc subtraction
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-## calcLogic-finalResult
-
-### calcLogic-finalResult~finalResult(data)
+### selector-selectCalcResult-finalResult~finalResult(data)
 
 For correct final result calculation
 
-**Kind**: inner method of [`calcLogic-finalResult`]  
+**Kind**: inner method of [`selector-selectCalcResult-finalResult`]  
 **Returns**: `string` - correct final answer
 
 | Param | Type     | Description  |
@@ -437,106 +157,13 @@ For correct final result calculation
 @see [test]
 ```
 
-## selector-selectCalcResult
+## selector-selectCalcResult-multiplication
 
--   [selector-selectCalcResult]
-    -   [~addition(data)]
-    -   [~correctBeginOfSingleNegativeNmbr(data)]
-    -   [~division(data)]
-    -   [~multiplication(data)]
-    -   [~selectCalcResult(state)]
-    -   [~subtraction(data)]
-
-### selector-selectCalcResult~addition(data)
-
-Function for calc addition
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `number` - result of addition all numbers in Array
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators, operands and anything else) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~correctBeginOfSingleNegativeNmbr(data)
-
-Function for handle of early data
-
-**Kind**: inner method of [`selector-selectCalcResult`]
-
-| Param | Type     | Description |
-| ----- | -------- | ----------- |
-| data  | `string` | from state  |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~division(data)
-
-Function for calc division
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~multiplication(data)
+### selector-selectCalcResult-multiplication~multiplication(data)
 
 Function for calc multiplication
 
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~selectCalcResult(state)
-
-Selector for getting calc result, main logic
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `string` - result of calculation
-
-| Param             | Type     | Description                                                     |
-| ----------------- | -------- | --------------------------------------------------------------- |
-| state             | `Object` | Redux state                                                     |
-| state.displayData | `string` | data from calc screen, f.e. '2 + 456 \* 9', spaces are required |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~subtraction(data)
-
-Function for calc subtraction
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
+**Kind**: inner method of [`selector-selectCalcResult-multiplication`]  
 **Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
 
 | Param | Type            | Description |
@@ -551,81 +178,6 @@ Function for calc subtraction
 
 ## selector-selectCalcResult
 
--   [selector-selectCalcResult]
-    -   [~addition(data)]
-    -   [~correctBeginOfSingleNegativeNmbr(data)]
-    -   [~division(data)]
-    -   [~multiplication(data)]
-    -   [~selectCalcResult(state)]
-    -   [~subtraction(data)]
-
-### selector-selectCalcResult~addition(data)
-
-Function for calc addition
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `number` - result of addition all numbers in Array
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators, operands and anything else) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~correctBeginOfSingleNegativeNmbr(data)
-
-Function for handle of early data
-
-**Kind**: inner method of [`selector-selectCalcResult`]
-
-| Param | Type     | Description |
-| ----- | -------- | ----------- |
-| data  | `string` | from state  |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~division(data)
-
-Function for calc division
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~multiplication(data)
-
-Function for calc multiplication
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
 ### selector-selectCalcResult~selectCalcResult(state)
 
 Selector for getting calc result, main logic
@@ -637,23 +189,6 @@ Selector for getting calc result, main logic
 | ----------------- | -------- | --------------------------------------------------------------- |
 | state             | `Object` | Redux state                                                     |
 | state.displayData | `string` | data from calc screen, f.e. '2 + 456 \* 9', spaces are required |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~subtraction(data)
-
-Function for calc subtraction
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
 
 **Example**
 
@@ -684,106 +219,13 @@ selectCorrectRegExpForCalcScreen(
 )
 ```
 
-## selector-selectCalcResult
+## selector-selectCalcResult-subtraction
 
--   [selector-selectCalcResult]
-    -   [~addition(data)]
-    -   [~correctBeginOfSingleNegativeNmbr(data)]
-    -   [~division(data)]
-    -   [~multiplication(data)]
-    -   [~selectCalcResult(state)]
-    -   [~subtraction(data)]
-
-### selector-selectCalcResult~addition(data)
-
-Function for calc addition
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `number` - result of addition all numbers in Array
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators, operands and anything else) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~correctBeginOfSingleNegativeNmbr(data)
-
-Function for handle of early data
-
-**Kind**: inner method of [`selector-selectCalcResult`]
-
-| Param | Type     | Description |
-| ----- | -------- | ----------- |
-| data  | `string` | from state  |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~division(data)
-
-Function for calc division
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~multiplication(data)
-
-Function for calc multiplication
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
-
-| Param | Type            | Description |
-| ----- | --------------- | ----------- |
-| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~selectCalcResult(state)
-
-Selector for getting calc result, main logic
-
-**Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `string` - result of calculation
-
-| Param             | Type     | Description                                                     |
-| ----------------- | -------- | --------------------------------------------------------------- |
-| state             | `Object` | Redux state                                                     |
-| state.displayData | `string` | data from calc screen, f.e. '2 + 456 \* 9', spaces are required |
-
-**Example**
-
-```js
-@see [test]
-```
-
-### selector-selectCalcResult~subtraction(data)
+### selector-selectCalcResult-subtraction~subtraction(data)
 
 Function for calc subtraction
 
-**Kind**: inner method of [`selector-selectCalcResult`]  
+**Kind**: inner method of [`selector-selectCalcResult-subtraction`]  
 **Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
 
 | Param | Type            | Description |
@@ -796,13 +238,13 @@ Function for calc subtraction
 @see [test]
 ```
 
-## calcLogic-turnDisplayDataToArray
+## selector-selectCalcResult-turnDisplayDataToArray
 
-### calcLogic-turnDisplayDataToArray~turnDisplayDataToArray(data)
+### selector-selectCalcResult-turnDisplayDataToArray~turnDisplayDataToArray(data)
 
 Function for convert input sting to specific arrays of numbers and strings (operators and operands)
 
-**Kind**: inner method of [`calcLogic-turnDisplayDataToArray`]  
+**Kind**: inner method of [`selector-selectCalcResult-turnDisplayDataToArray`]  
 **Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings (operators and operands)
 
 | Param | Type     | Description |
@@ -871,28 +313,32 @@ Interface for initialState
 <!-- LINKS -->
 
 [app-app]: #app-app
+[selector-selectcalcresult-addition]: #selector-selectcalcresult-addition
+[selector-selectcalcresult-correctbeginofsinglenegativenmbr]: #selector-selectcalcresult-correctbeginofsinglenegativenmbr
+[selector-selectcalcresult-division]: #selector-selectcalcresult-division
+[selector-selectcalcresult-finalresult]: #selector-selectcalcresult-finalresult
+[selector-selectcalcresult-multiplication]: #selector-selectcalcresult-multiplication
 [selector-selectcalcresult]: #selector-selectcalcresult
-[calclogic-finalresult]: #calclogic-finalresult
 [selector-selectcorrectregexpforcalcscreen]: #selector-selectcorrectregexpforcalcscreen
-[calclogic-turndisplaydatatoarray]: #calclogic-turndisplaydatatoarray
+[selector-selectcalcresult-subtraction]: #selector-selectcalcresult-subtraction
+[selector-selectcalcresult-turndisplaydatatoarray]: #selector-selectcalcresult-turndisplaydatatoarray
 [utils-mapalldispatch]: #utils-mapalldispatch
 [utils-pipefunction]: #utils-pipefunction
 [initialstate]: #initialstate
 [calcstateinterface]: #calcstateinterface
 [`app-app`]: #app-app
-[`selector-selectcalcresult`]: #selector-selectcalcresult
+[`selector-selectcalcresult-addition`]: #selector-selectcalcresult-addition
 [test]: https://github.com/zloid/math-calc/blob/master/__tests__/calcAppLogic/functions/pipeFunction.test.js
-[`calclogic-finalresult`]: #calclogic-finalresult
+[`selector-selectcalcresult-correctbeginofsinglenegativenmbr`]: #selector-selectcalcresult-correctbeginofsinglenegativenmbr
+[`selector-selectcalcresult-division`]: #selector-selectcalcresult-division
+[`selector-selectcalcresult-finalresult`]: #selector-selectcalcresult-finalresult
+[`selector-selectcalcresult-multiplication`]: #selector-selectcalcresult-multiplication
+[`selector-selectcalcresult`]: #selector-selectcalcresult
 [`selector-selectcorrectregexpforcalcscreen`]: #selector-selectcorrectregexpforcalcscreen
-[`calclogic-turndisplaydatatoarray`]: #calclogic-turndisplaydatatoarray
+[`selector-selectcalcresult-subtraction`]: #selector-selectcalcresult-subtraction
+[`selector-selectcalcresult-turndisplaydatatoarray`]: #selector-selectcalcresult-turndisplaydatatoarray
 [~connect]: #utils-mapalldispatchconnect
 [~mapalldispatch]: #utils-mapalldispatchmapalldispatch
 [`utils-mapalldispatch`]: #utils-mapalldispatch
 [`utils-pipefunction`]: #utils-pipefunction
-[~addition(data)]: #selector-selectcalcresultadditiondata
-[~correctbeginofsinglenegativenmbr(data)]: #selector-selectcalcresultcorrectbeginofsinglenegativenmbrdata
-[~division(data)]: #selector-selectcalcresultdivisiondata
-[~multiplication(data)]: #selector-selectcalcresultmultiplicationdata
-[~selectcalcresult(state)]: #selector-selectcalcresultselectcalcresultstate
-[~subtraction(data)]: #selector-selectcalcresultsubtractiondata
 [new connect()]: #new-connect

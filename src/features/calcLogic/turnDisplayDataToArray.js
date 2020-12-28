@@ -1,4 +1,4 @@
-/**@module calcLogic-turnDisplayDataToArray */
+/** @module selector-selectCalcResult-turnDisplayDataToArray */
 
 /**
  * Function for convert input sting to specific arrays of numbers and strings (operators and operands)
