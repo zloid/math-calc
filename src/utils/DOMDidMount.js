@@ -5,10 +5,10 @@ import { keyboardEventListener } from '../features/calcLogic/keyboardEventListen
 
 /**
  * Must be call after App render
- * 
+ *
  * @function DOMDidMount
- * @returns {void} 
- * @example @see [test]{@link }
+ * @returns {void}
+ * @example @see [test]{@link https://github.com/zloid/math-calc/blob/master/__tests__/calcAppLogic/functions/DOMDidMount.test.js}
  */
 /* 
 export const DOMDidMount = () =>

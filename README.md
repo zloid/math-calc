@@ -18,7 +18,7 @@
 -   Automatic generation of html documentation from JSDoc + docdash as a nice looking template for JSDoc
 -   Automatic README.md generation from JSDoc
 -   Husky: for hooks
- 
+
 ## You can
 
 -   git clone [this_repo_url] && cd [repo_name] && npm i (install this repo on your machine)
@@ -30,352 +30,361 @@
 -   npm run serve (for run app local server and www)
 -   use VSC + Extensions: "Comment tagged templates", "lit-html", for best expierence with HTML-in-JS template literals
 
-
 <!-- You do not need to touch the code below. This is automatic README.md generation -->
 <!-- check out https://github.com/jsdoc2md for learn more -->
 
 ## API Reference
 
-## Modules
------- | -----------  
-[app-App] | 
-[selector-selectCalcResult-addition] | 
-[selector-selectCalcResult-correctBeginOfSingleNegativeNmbr] | 
-[selector-selectCalcResult-division] | 
-[selector-selectCalcResult-finalResult] | 
-[selector-selectCalcResult-multiplication] | 
-[selector-selectCalcResult] | 
-[selector-selectCorrectRegExpForCalcScreen] | 
-[selector-selectCalcResult-subtraction] | 
-[selector-selectCalcResult-turnDisplayDataToArray] | 
-[utils-mapAllDispatch] | 
-[utils-pipeFunction] | 
+## Module | Description
+
+------ | -----------
+[app-App] |
+[selector-selectCalcResult-addition] |
+[selector-selectCalcResult-correctBeginOfSingleNegativeNmbr] |
+[selector-selectCalcResult-division] |
+[selector-selectCalcResult-finalResult] |
+[utils-keyboardEventListener] |
+[selector-selectCalcResult-multiplication] |
+[selector-selectCalcResult] |
+[selector-selectCorrectRegExpForCalcScreen] |
+[selector-selectCalcResult-subtraction] |
+[selector-selectCalcResult-turnDisplayDataToArray] |
+[utils-DOMDidMount] |
+[utils-mapAllDispatch] |
+[utils-pipeFunction] |
 
 ## Constants
 
-Name | Description
------- | -----------
-[initialState] | initialState
+| Name           | Description  |
+| -------------- | ------------ |
+| [initialState] | initialState |
 
 ## Typedefs
 
-Name | Description
------- | -----------
-[CalcStateInterface] | Interface for initialState
-
+| Name                 | Description                |
+| -------------------- | -------------------------- |
+| [CalcStateInterface] | Interface for initialState |
 
 ## [app-App]
 
-
-
 ### [~App(\[placeToRender\])]
-
 
 Returns instance of Reef.js (whole SPA)
 
-**Kind**: inner method of [`app-App`]  
+**Kind**: inner method of [`app-App`]
 
-| Param | Type | Default |
-| --- | --- | --- |
-| \[placeToRender\] | `string` | `'#root'` | 
+| Param             | Type     | Default   |
+| ----------------- | -------- | --------- |
+| \[placeToRender\] | `string` | `'#root'` |
 
-**Example**  
+**Example**
+
 ```js
 App('#cool-root').render()
 ```
 
 ## [selector-selectCalcResult-addition]
 
-
-
 ### [~addition(data)]
-
 
 Function for calc addition
 
 **Kind**: inner method of [`selector-selectCalcResult-addition`]  
-**Returns**: `number` - result of addition all numbers in Array  
+**Returns**: `number` - result of addition all numbers in Array
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | `Array.<(string|number)>`  specific arrays of numbers and strings (operators, operands and anything else) |
+| Param | Type            | Description |
+| ----- | --------------- | ----------- |
+| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators, operands and anything else) |
 
-**Example**  
+**Example**
+
 ```js
 @see [test]
 ```
 
 ## [selector-selectCalcResult-correctBeginOfSingleNegativeNmbr]
 
-
-
 ### [~correctBeginOfSingleNegativeNmbr(data)]
-
 
 Function for handle of early data
 
-**Kind**: inner method of [`selector-selectCalcResult-correctBeginOfSingleNegativeNmbr`]  
+**Kind**: inner method of [`selector-selectCalcResult-correctBeginOfSingleNegativeNmbr`]
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | `string` | from state |
+| Param | Type     | Description |
+| ----- | -------- | ----------- |
+| data  | `string` | from state  |
 
-**Example**  
+**Example**
+
 ```js
 @see [test]
 ```
 
 ## [selector-selectCalcResult-division]
 
-
-
 ### [~division(data)]
-
 
 Function for calc division
 
 **Kind**: inner method of [`selector-selectCalcResult-division`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings  
+**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | `Array.<(string|number)>` | specific arrays of numbers and strings (operators and operands) 
+| Param | Type            | Description |
+| ----- | --------------- | ----------- |
+| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
 
-**Example**  
+**Example**
+
 ```js
 @see [test]
 ```
 
 ## [selector-selectCalcResult-finalResult]
 
-
-
 ### [~finalResult(data)]
-
 
 For correct final result calculation
 
 **Kind**: inner method of [`selector-selectCalcResult-finalResult`]  
-**Returns**: `string` - correct final answer  
+**Returns**: `string` - correct final answer
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | `number` | final answer |
+| Param | Type     | Description  |
+| ----- | -------- | ------------ |
+| data  | `number` | final answer |
 
-**Example**  
+**Example**
+
+```js
+@see [test]
+```
+
+## [utils-keyboardEventListener]
+
+### [~keyboardEventListener()]
+
+Function which returns keydown events handler, catching keyboard and write to screen
+
+**Kind**: inner method of [`utils-keyboardEventListener`]  
+**Returns**: `string` - EventListener for catching Keyboard and NumPad buttons: 1234567890.,+-\*÷ enter delete; and ignoring all f-buttons on keyboard  
+**Date**: 2020-09-15  
+**Example**
+
 ```js
 @see [test]
 ```
 
 ## [selector-selectCalcResult-multiplication]
 
-
-
 ### [~multiplication(data)]
-
 
 Function for calc multiplication
 
 **Kind**: inner method of [`selector-selectCalcResult-multiplication`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings  
+**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | `Array.<(string|number)>`  specific arrays of numbers and strings (operators and operands) 
+| Param | Type            | Description |
+| ----- | --------------- | ----------- |
+| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
 
-**Example**  
+**Example**
+
 ```js
 @see [test]
 ```
 
 ## [selector-selectCalcResult]
 
-
-
 ### [~selectCalcResult(state)]
-
 
 Selector for getting calc result, main logic
 
 **Kind**: inner method of [`selector-selectCalcResult`]  
-**Returns**: `string` - result of calculation  
+**Returns**: `string` - result of calculation
 
-| Param | Type | Description |
-| --- | --- | --- |
-| state | `Object` | Redux state |
-| state.displayData | `string` | data from calc screen, f.e. '2 + 456 * 9', spaces are required |
+| Param             | Type     | Description                                                     |
+| ----------------- | -------- | --------------------------------------------------------------- |
+| state             | `Object` | Redux state                                                     |
+| state.displayData | `string` | data from calc screen, f.e. '2 + 456 \* 9', spaces are required |
 
-**Example**  
+**Example**
+
 ```js
 @see [test]
 ```
 
 ## [selector-selectCorrectRegExpForCalcScreen]
 
-
-
 ### [~selectCorrectRegExpForCalcScreen(state, payload)]
-
 
 For transpile any string to correct data for calculator screen
 
-**Kind**: inner method of [`selector-selectCorrectRegExpForCalcScreen`]  
+**Kind**: inner method of [`selector-selectCorrectRegExpForCalcScreen`]
 
-| Param | Type | Description |
-| --- | --- | --- |
-| state | `Object` | RTK state.displayData |
+| Param   | Type     | Description                       |
+| ------- | -------- | --------------------------------- |
+| state   | `Object` | RTK state.displayData             |
 | payload | `string` | action.payload, string for RegExp |
 
-**Example**  
+**Example**
+
 ```js
 //returns: '0.1 + 2214 * 21'
- selectCorrectRegExpForCalcScreen({displayData: '0'}, '   0.....1 ++ 2214 *** 21   ')
+selectCorrectRegExpForCalcScreen(
+    { displayData: '0' },
+    '   0.....1 ++ 2214 *** 21   '
+)
 ```
 
 ## [selector-selectCalcResult-subtraction]
 
-
-
 ### [~subtraction(data)]
-
 
 Function for calc subtraction
 
 **Kind**: inner method of [`selector-selectCalcResult-subtraction`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings  
+**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings
 
-| Param | Type | Description
-| --- | --- | --- |
-| data | `Array.<(string|number)>` | specific arrays of numbers and strings (operators and operands) |
+| Param | Type            | Description |
+| ----- | --------------- | ----------- |
+| data  | `Array.<(string | number)>`   | specific arrays of numbers and strings (operators and operands) |
 
-**Example**  
+**Example**
+
 ```js
 @see [test]
 ```
 
 ## [selector-selectCalcResult-turnDisplayDataToArray]
 
-
-
 ### [~turnDisplayDataToArray(data)]
-
 
 Function for convert input sting to specific arrays of numbers and strings (operators and operands)
 
 **Kind**: inner method of [`selector-selectCalcResult-turnDisplayDataToArray`]  
-**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings (operators and operands)  
+**Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings (operators and operands)
 
-| Param | Type | Description |
-| --- | --- | --- |
-| data | `string` | from state |
+| Param | Type     | Description |
+| ----- | -------- | ----------- |
+| data  | `string` | from state  |
 
-**Example**  
+**Example**
+
+```js
+@see [test]
+```
+
+## [utils-DOMDidMount]
+
+### [~DOMDidMount()]
+
+Must be call after App render
+
+**Kind**: inner method of [`utils-DOMDidMount`]  
+**Example**
+
 ```js
 @see [test]
 ```
 
 ## [utils-mapAllDispatch]
 
-
-
-* [utils-mapAllDispatch]
-    * [~Connect]
-        * [new Connect()]
-    * [~mapAllDispatch]
-
+-   [utils-mapAllDispatch]
+    -   [~Connect]
+        -   [new Connect()]
+    -   [~mapAllDispatch]
 
 ### [~Connect]
 
-
-**Kind**: inner class of [`utils-mapAllDispatch`]  
+**Kind**: inner class of [`utils-mapAllDispatch`]
 
 #### [new Connect()]
 
-
 Creating Singleton which compose all RTK actions we will use
 
-**Returns**: `Object` - collection of all dispathes needs for App  
+**Returns**: `Object` - collection of all dispathes needs for App
 
 ### [~mapAllDispatch]
 
-
 Singleton with all dispatch-actions
 
-**Kind**: inner constant of [`utils-mapAllDispatch`]  
+**Kind**: inner constant of [`utils-mapAllDispatch`]
 
 ## [utils-pipeFunction]
 
-
-
 ### [~pipeFunction(funcs)]
-
 
 For pipeline a data thru all function from first to last
 
-**Kind**: inner method of [`utils-pipeFunction`]  
+**Kind**: inner method of [`utils-pipeFunction`]
 
-| Param | Type |
-| --- | --- |
-| funcs | `Array.<function()>` | 
+| Param | Type                 |
+| ----- | -------------------- |
+| funcs | `Array.<function()>` |
 
-**Example**  
+**Example**
+
 ```js
 @see [test]
 ```
 
 ## [initialState]
 
-
 initialState
 
-**Kind**: global constant  
+**Kind**: global constant
 
 ## [CalcStateInterface]
 
-
 Interface for initialState
 
-**Kind**: global typedef  
+**Kind**: global typedef
+
 <!-- LINKS -->
 
-[app-App]:#app-app
-[selector-selectCalcResult-addition]:#selector-selectcalcresult-addition
-[selector-selectCalcResult-correctBeginOfSingleNegativeNmbr]:#selector-selectcalcresult-correctbeginofsinglenegativenmbr
-[selector-selectCalcResult-division]:#selector-selectcalcresult-division
-[selector-selectCalcResult-finalResult]:#selector-selectcalcresult-finalresult
-[selector-selectCalcResult-multiplication]:#selector-selectcalcresult-multiplication
-[selector-selectCalcResult]:#selector-selectcalcresult
-[selector-selectCorrectRegExpForCalcScreen]:#selector-selectcorrectregexpforcalcscreen
-[selector-selectCalcResult-subtraction]:#selector-selectcalcresult-subtraction
-[selector-selectCalcResult-turnDisplayDataToArray]:#selector-selectcalcresult-turndisplaydatatoarray
-[utils-mapAllDispatch]:#utils-mapalldispatch
-[utils-pipeFunction]:#utils-pipefunction
-[initialState]:#initialstate
-[CalcStateInterface]:#calcstateinterface
-[`app-App`]:#app-app
-[`selector-selectCalcResult-addition`]:#selector-selectcalcresult-addition
-[test]:https://github.com/zloid/math-calc/blob/master/__tests__/calcAppLogic/functions/pipeFunction.test.js
-[`selector-selectCalcResult-correctBeginOfSingleNegativeNmbr`]:#selector-selectcalcresult-correctbeginofsinglenegativenmbr
-[`selector-selectCalcResult-division`]:#selector-selectcalcresult-division
-[`selector-selectCalcResult-finalResult`]:#selector-selectcalcresult-finalresult
-[`selector-selectCalcResult-multiplication`]:#selector-selectcalcresult-multiplication
-[`selector-selectCalcResult`]:#selector-selectcalcresult
-[`selector-selectCorrectRegExpForCalcScreen`]:#selector-selectcorrectregexpforcalcscreen
-[`selector-selectCalcResult-subtraction`]:#selector-selectcalcresult-subtraction
-[`selector-selectCalcResult-turnDisplayDataToArray`]:#selector-selectcalcresult-turndisplaydatatoarray
-[~Connect]:#utils-mapalldispatchconnect
-[~mapAllDispatch]:#utils-mapalldispatchmapalldispatch
-[`utils-mapAllDispatch`]:#utils-mapalldispatch
-[`utils-pipeFunction`]:#utils-pipefunction
-[~App(\[placeToRender\])]:#app-appappplacetorender
-[~addition(data)]:#selector-selectcalcresult-additionadditiondata
-[~correctBeginOfSingleNegativeNmbr(data)]:#selector-selectcalcresult-correctbeginofsinglenegativenmbrcorrectbeginofsinglenegativenmbrdata
-[~division(data)]:#selector-selectcalcresult-divisiondivisiondata
-[~finalResult(data)]:#selector-selectcalcresult-finalresultfinalresultdata
-[~multiplication(data)]:#selector-selectcalcresult-multiplicationmultiplicationdata
-[~selectCalcResult(state)]:#selector-selectcalcresultselectcalcresultstate
-[~selectCorrectRegExpForCalcScreen(state, payload)]:#selector-selectcorrectregexpforcalcscreenselectcorrectregexpforcalcscreenstate-payload
-[~subtraction(data)]:#selector-selectcalcresult-subtractionsubtractiondata
-[~turnDisplayDataToArray(data)]:#selector-selectcalcresult-turndisplaydatatoarrayturndisplaydatatoarraydata
-[new Connect()]:#new-connect
-[~pipeFunction(funcs)]:#utils-pipefunctionpipefunctionfuncs
+[app-app]: #app-app
+[selector-selectcalcresult-addition]: #selector-selectcalcresult-addition
+[selector-selectcalcresult-correctbeginofsinglenegativenmbr]: #selector-selectcalcresult-correctbeginofsinglenegativenmbr
+[selector-selectcalcresult-division]: #selector-selectcalcresult-division
+[selector-selectcalcresult-finalresult]: #selector-selectcalcresult-finalresult
+[utils-keyboardeventlistener]: #utils-keyboardeventlistener
+[selector-selectcalcresult-multiplication]: #selector-selectcalcresult-multiplication
+[selector-selectcalcresult]: #selector-selectcalcresult
+[selector-selectcorrectregexpforcalcscreen]: #selector-selectcorrectregexpforcalcscreen
+[selector-selectcalcresult-subtraction]: #selector-selectcalcresult-subtraction
+[selector-selectcalcresult-turndisplaydatatoarray]: #selector-selectcalcresult-turndisplaydatatoarray
+[utils-domdidmount]: #utils-domdidmount
+[utils-mapalldispatch]: #utils-mapalldispatch
+[utils-pipefunction]: #utils-pipefunction
+[initialstate]: #initialstate
+[calcstateinterface]: #calcstateinterface
+[`app-app`]: #app-app
+[`selector-selectcalcresult-addition`]: #selector-selectcalcresult-addition
+[test]: https://github.com/zloid/math-calc/blob/master/__tests__/calcAppLogic/functions/pipeFunction.test.js
+[`selector-selectcalcresult-correctbeginofsinglenegativenmbr`]: #selector-selectcalcresult-correctbeginofsinglenegativenmbr
+[`selector-selectcalcresult-division`]: #selector-selectcalcresult-division
+[`selector-selectcalcresult-finalresult`]: #selector-selectcalcresult-finalresult
+[`utils-keyboardeventlistener`]: #utils-keyboardeventlistener
+[`selector-selectcalcresult-multiplication`]: #selector-selectcalcresult-multiplication
+[`selector-selectcalcresult`]: #selector-selectcalcresult
+[`selector-selectcorrectregexpforcalcscreen`]: #selector-selectcorrectregexpforcalcscreen
+[`selector-selectcalcresult-subtraction`]: #selector-selectcalcresult-subtraction
+[`selector-selectcalcresult-turndisplaydatatoarray`]: #selector-selectcalcresult-turndisplaydatatoarray
+[`utils-domdidmount`]: #utils-domdidmount
+[~connect]: #utils-mapalldispatchconnect
+[~mapalldispatch]: #utils-mapalldispatchmapalldispatch
+[`utils-mapalldispatch`]: #utils-mapalldispatch
+[`utils-pipefunction`]: #utils-pipefunction
+[~app(\[placetorender\])]: #app-appappplacetorender
+[~addition(data)]: #selector-selectcalcresult-additionadditiondata
+[~correctbeginofsinglenegativenmbr(data)]: #selector-selectcalcresult-correctbeginofsinglenegativenmbrcorrectbeginofsinglenegativenmbrdata
+[~division(data)]: #selector-selectcalcresult-divisiondivisiondata
+[~finalresult(data)]: #selector-selectcalcresult-finalresultfinalresultdata
+[~keyboardeventlistener()]: #utils-keyboardeventlistenerkeyboardeventlistener
+[~multiplication(data)]: #selector-selectcalcresult-multiplicationmultiplicationdata
+[~selectcalcresult(state)]: #selector-selectcalcresultselectcalcresultstate
+[~selectcorrectregexpforcalcscreen(state, payload)]: #selector-selectcorrectregexpforcalcscreenselectcorrectregexpforcalcscreenstate-payload
+[~subtraction(data)]: #selector-selectcalcresult-subtractionsubtractiondata
+[~turndisplaydatatoarray(data)]: #selector-selectcalcresult-turndisplaydatatoarrayturndisplaydatatoarraydata
+[~domdidmount()]: #utils-domdidmountdomdidmount
+[new connect()]: #new-connect
+[~pipefunction(funcs)]: #utils-pipefunctionpipefunctionfuncs
