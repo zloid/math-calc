@@ -37,8 +37,7 @@
 ## API Reference
 
 ## Modules
-Module 
------- 
+------ | -----------  
 [app-App] | 
 [selector-selectCalcResult-addition] | 
 [selector-selectCalcResult-correctBeginOfSingleNegativeNmbr] | 
@@ -99,7 +98,7 @@ Function for calc addition
 
 | Param | Type | Description |
 | --- | --- | --- |
-| data | `Array.<(string|number)>` | specific arrays of numbers and strings (operators, operands and anything else) |
+| data | `Array.<(string|number)>`  specific arrays of numbers and strings (operators, operands and anything else) |
 
 **Example**  
 ```js
@@ -140,7 +139,7 @@ Function for calc division
 
 | Param | Type | Description |
 | --- | --- | --- |
-| data | `Array.<(string|number)>` | specific arrays of numbers and strings (operators and operands) |
+| data | `Array.<(string|number)>` | specific arrays of numbers and strings (operators and operands) 
 
 **Example**  
 ```js
@@ -182,7 +181,7 @@ Function for calc multiplication
 
 | Param | Type | Description |
 | --- | --- | --- |
-| data | `Array.<(string|number)>` | specific arrays of numbers and strings (operators and operands) |
+| data | `Array.<(string|number)>`  specific arrays of numbers and strings (operators and operands) 
 
 **Example**  
 ```js
@@ -245,7 +244,7 @@ Function for calc subtraction
 **Kind**: inner method of [`selector-selectCalcResult-subtraction`]  
 **Returns**: `Array.<(string|number)>` - specific arrays of numbers and strings  
 
-| Param | Type | Description |
+| Param | Type | Description
 | --- | --- | --- |
 | data | `Array.<(string|number)>` | specific arrays of numbers and strings (operators and operands) |
 
