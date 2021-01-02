@@ -2,13 +2,12 @@
 
 /**
  * For transpile any string to correct data for calculator screen
+ *
  * @function selectCorrectRegExpForCalcScreen
- * @param {{displayData: ''}} state - RTK state.displayData
+ * @param {Object} state - RTK state.displayData
  * @param {string} payload - action.payload, string for RegExp
  * @returns {string}
- * @example
- * //returns: '0.1 + 2214 * 21'
- *  selectCorrectRegExpForCalcScreen({displayData: '0'}, '   0.....1 ++ 2214 *** 21   ')
+ * @example @see [test]{@link https://github.com/zloid/math-calc/tree/master/__tests__/calcAppLogic/functions/selectCorrectRegExpForCalcScreen.test.js}
  */
 export const selectCorrectRegExpForCalcScreen = (
     state = { displayData: '' },
