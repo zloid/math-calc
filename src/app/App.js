@@ -12,7 +12,10 @@ import store from './store'
 const App = (placeToRender = '#root') =>
     new Reef(placeToRender, {
         template: () => /* html */ `<div>
-            <div role="calcMainScreen">
+            <div
+             role="calcMainScreen"
+             onclick="globalThis.mapAllDispatch.buttonToDisplay.doEqual()"
+            >
                 ${store.getState().calcLogic.displayData}
             </div>
 
