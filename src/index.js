@@ -2,6 +2,7 @@ import App from './app/App'
 import mapAllDispatch from './utils/mapAllDispatch'
 import store from './app/store'
 import { DOMDidMount } from './utils/DOMDidMount'
+import './app/app.css'
 
 !globalThis.mapAllDispatch && (globalThis.mapAllDispatch = mapAllDispatch)
 

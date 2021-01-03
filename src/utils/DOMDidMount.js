@@ -2,6 +2,7 @@
 
 // import { calcFeaturesLogic } from './calcFeaturesLogic'
 import { keyboardEventListener } from '../features/calcLogic/keyboardEventListener/keyboardEventListener'
+import { calcFeaturesLogic } from './calcFeaturesLogic'
 
 /**
  * Must be call after App render
@@ -19,5 +20,5 @@ export const DOMDidMount = () =>
      */
 export const DOMDidMount = () => {
     keyboardEventListener()
-    // calcFeaturesLogic()
+    calcFeaturesLogic()
 }

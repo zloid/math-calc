@@ -1,9 +1,12 @@
-import { screen } from '@testing-library/dom'
+import { screen, fireEvent } from '@testing-library/dom'
 import App from '../src/app/App'
+import { DOMDidMount } from '../src/utils/DOMDidMount'
+import '../src/app/app.css'
 
 document.body.innerHTML = /* html */ '<div role="mainId" id="root"></div>'
 
 App('#root').render()
+DOMDidMount()
 
 describe('div#root', () => {
     it('should exist', () => {
@@ -12,7 +15,7 @@ describe('div#root', () => {
 })
 
 describe('App', () => {
-    it('calc [screen] should exist', () => {
+    it('calc -screen- should exist', () => {
         expect(screen.queryByRole(/calcMainScreen/i)).not.toBeNull()
     })
     it('calc buttons [0-9] should exist', () => {
@@ -48,3 +51,18 @@ describe('App', () => {
         expect(screen.getByRole(/calcBtnPoint/i).textContent.trim()).toBe('.')
     })
 })
+
+describe('App Features Area', () => {
+    it('should exist', () => {
+        expect(screen.getByRole(/featuresAreaForHover/i)).not.toBeNull()
+    })
+    it('main element is hover by default', () => {
+        // expect(screen.getByRole(/calcFeaturesForUsers/i)).toBeNull()
+
+        // fireEvent.mouseEnter(screen.getByRole(/featuresAreaForHover/i))
+
+        // expect(screen.getByRole(/calcFeaturesForUsers/i)).not.toBeNull()
+    })
+})
+
+screen.debug()

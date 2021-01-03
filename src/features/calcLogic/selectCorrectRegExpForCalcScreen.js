@@ -4,7 +4,7 @@
  * For transpile any string to correct data for calculator screen
  *
  * @function selectCorrectRegExpForCalcScreen
- * @param {Object} state - RTK state.displayData
+ * @param {Object} state - Redux state
  * @param {string} payload - action.payload, string for RegExp
  * @returns {string}
  * @example @see [test]{@link https://github.com/zloid/math-calc/tree/master/__tests__/calcAppLogic/functions/selectCorrectRegExpForCalcScreen.test.js}

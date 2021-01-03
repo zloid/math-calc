@@ -13,8 +13,8 @@ const App = (placeToRender = '#root') =>
     new Reef(placeToRender, {
         template: () => /* html */ `<div>
             <div
-             role="calcMainScreen"
              onclick="globalThis.mapAllDispatch.buttonToDisplay.doEqual()"
+             role="calcMainScreen"
             >
                 ${store.getState().calcLogic.displayData}
             </div>
@@ -40,6 +40,21 @@ const App = (placeToRender = '#root') =>
             <button onclick="globalThis.mapAllDispatch.buttonToDisplay.clearAll()" role="calcBtnClear">C</button>
             <button onclick="globalThis.mapAllDispatch.buttonToDisplay.doEqual()" role="calcBtnEqual">=</button>
             <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnPoint">.</button>
+
+            <div
+                id="calcFeatures"
+                role="featuresAreaForHover"
+            >
+                calc Features Area
+            </div>
+            <div 
+                id="calc-tooltip" 
+                role="calcFeaturesForUsers"
+            >
+                - Have a keyboard? Math buttons available!
+            <br />
+                - Click on calc's screen for get result
+            </div>
             
         </div>`,
     })

@@ -1,6 +1,6 @@
 {
     "name": "modern-vanilla-js-math-calc",
-    "version": "0.2.24",
+    "version": "0.2.26",
     "description": "math_calc",
     "main": "index.js",
     "scripts": {
@@ -23,6 +23,7 @@
     "author": "idolz",
     "license": "MIT",
     "dependencies": {
+        "@popperjs/core": "^2.6.0",
         "@reduxjs/toolkit": "^1.4.0",
         "reefjs": "^7.4.2"
     },
@@ -42,6 +43,7 @@
         "eslint": "^7.13.0",
         "html-webpack-plugin": "^4.5.0",
         "husky": "^4.3.0",
+        "identity-obj-proxy": "^3.0.0",
         "jest": "^26.6.1",
         "jest-cli": "^26.6.1",
         "jsdoc": "^3.6.6",
