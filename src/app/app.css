@@ -15,7 +15,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
 }
-/* 
+
 .container {
     background: silver;
     padding: 10px 25px;
@@ -41,7 +41,7 @@ body {
     font-size: 20px;
     color: #000;
     font-weight: 700;
-} */
+}
 
 #calc-tooltip {
     background: #333;

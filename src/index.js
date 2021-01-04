@@ -2,6 +2,8 @@ import App from './app/App'
 import mapAllDispatch from './utils/mapAllDispatch'
 import store from './app/store'
 import { DOMDidMount } from './utils/DOMDidMount'
+// styles for App
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './app/app.css'
 
 !globalThis.mapAllDispatch && (globalThis.mapAllDispatch = mapAllDispatch)

@@ -35,23 +35,26 @@
 
 ## API Reference
 
-## Module | Description
+## Modules
 
------- | -----------
-[app-App] |
-[selector-selectCalcResult-addition] |
-[selector-selectCalcResult-correctBeginOfSingleNegativeNmbr] |
-[selector-selectCalcResult-division] |
-[selector-selectCalcResult-finalResult] |
-[utils-keyboardEventListener] |
-[selector-selectCalcResult-multiplication] |
-[selector-selectCalcResult] |
-[selector-selectCorrectRegExpForCalcScreen] |
-[selector-selectCalcResult-subtraction] |
-[selector-selectCalcResult-turnDisplayDataToArray] |
-[utils-DOMDidMount] |
-[utils-mapAllDispatch] |
-[utils-pipeFunction] |
+| Module                                                       | Description |
+| ------------------------------------------------------------ | ----------- |
+| [app-App]                                                    |
+| [components-GithubCorner]                                    |
+| [selector-selectCalcResult-addition]                         |
+| [selector-selectCalcResult-correctBeginOfSingleNegativeNmbr] |
+| [selector-selectCalcResult-division]                         |
+| [selector-selectCalcResult-finalResult]                      |
+| [utils-keyboardEventListener]                                |
+| [selector-selectCalcResult-multiplication]                   |
+| [selector-selectCalcResult]                                  |
+| [selector-selectCorrectRegExpForCalcScreen]                  |
+| [selector-selectCalcResult-subtraction]                      |
+| [selector-selectCalcResult-turnDisplayDataToArray]           |
+| [utils-calcFeaturesLogic]                                    |
+| [utils-DOMDidMount]                                          |
+| [utils-mapAllDispatch]                                       |
+| [utils-pipeFunction]                                         |
 
 ## Constants
 
@@ -65,9 +68,9 @@
 | -------------------- | -------------------------- |
 | [CalcStateInterface] | Interface for initialState |
 
-## [app-App]
+## app-App
 
-### [~App(\[placeToRender\])]
+### app-App~App(\[placeToRender\])
 
 Returns instance of Reef.js (whole SPA)
 
@@ -83,9 +86,28 @@ Returns instance of Reef.js (whole SPA)
 App('#cool-root').render()
 ```
 
-## [selector-selectCalcResult-addition]
+## components-GithubCorner
 
-### [~addition(data)]
+### components-GithubCorner~GithubCorner(\[linkToRepo\])
+
+Visual link to gitHub repo
+
+**Kind**: inner method of [`components-GithubCorner`]  
+**Returns**: `string` - template literal: octoCat svg + link to repo
+
+| Param          | Type     | Description               |
+| -------------- | -------- | ------------------------- |
+| \[linkToRepo\] | `string` | link to github repository |
+
+**Example**
+
+```js
+${GithubCorner('https://github.com/')}
+```
+
+## selector-selectCalcResult-addition
+
+### selector-selectCalcResult-addition~addition(data)
 
 Function for calc addition
 
@@ -102,9 +124,9 @@ Function for calc addition
 @see [test]
 ```
 
-## [selector-selectCalcResult-correctBeginOfSingleNegativeNmbr]
+## selector-selectCalcResult-correctBeginOfSingleNegativeNmbr
 
-### [~correctBeginOfSingleNegativeNmbr(data)]
+### selector-selectCalcResult-correctBeginOfSingleNegativeNmbr~correctBeginOfSingleNegativeNmbr(data)
 
 Function for handle of early data
 
@@ -120,9 +142,9 @@ Function for handle of early data
 @see [test]
 ```
 
-## [selector-selectCalcResult-division]
+## selector-selectCalcResult-division
 
-### [~division(data)]
+### selector-selectCalcResult-division~division(data)
 
 Function for calc division
 
@@ -139,9 +161,9 @@ Function for calc division
 @see [test]
 ```
 
-## [selector-selectCalcResult-finalResult]
+## selector-selectCalcResult-finalResult
 
-### [~finalResult(data)]
+### selector-selectCalcResult-finalResult~finalResult(data)
 
 For correct final result calculation
 
@@ -158,9 +180,9 @@ For correct final result calculation
 @see [test]
 ```
 
-## [utils-keyboardEventListener]
+## utils-keyboardEventListener
 
-### [~keyboardEventListener()]
+### utils-keyboardEventListener~keyboardEventListener()
 
 Function which returns keydown events handler, catching keyboard and write to screen
 
@@ -173,9 +195,9 @@ Function which returns keydown events handler, catching keyboard and write to sc
 @see [test]
 ```
 
-## [selector-selectCalcResult-multiplication]
+## selector-selectCalcResult-multiplication
 
-### [~multiplication(data)]
+### selector-selectCalcResult-multiplication~multiplication(data)
 
 Function for calc multiplication
 
@@ -192,9 +214,9 @@ Function for calc multiplication
 @see [test]
 ```
 
-## [selector-selectCalcResult]
+## selector-selectCalcResult
 
-### [~selectCalcResult(state)]
+### selector-selectCalcResult~selectCalcResult(state)
 
 Selector for getting calc result, main logic
 
@@ -212,9 +234,9 @@ Selector for getting calc result, main logic
 @see [test]
 ```
 
-## [selector-selectCorrectRegExpForCalcScreen]
+## selector-selectCorrectRegExpForCalcScreen
 
-### [~selectCorrectRegExpForCalcScreen(state, payload)]
+### selector-selectCorrectRegExpForCalcScreen~selectCorrectRegExpForCalcScreen(state, payload)
 
 For transpile any string to correct data for calculator screen
 
@@ -222,22 +244,18 @@ For transpile any string to correct data for calculator screen
 
 | Param   | Type     | Description                       |
 | ------- | -------- | --------------------------------- |
-| state   | `Object` | RTK state.displayData             |
+| state   | `Object` | Redux state                       |
 | payload | `string` | action.payload, string for RegExp |
 
 **Example**
 
 ```js
-//returns: '0.1 + 2214 * 21'
-selectCorrectRegExpForCalcScreen(
-    { displayData: '0' },
-    '   0.....1 ++ 2214 *** 21   '
-)
+@see [test]
 ```
 
-## [selector-selectCalcResult-subtraction]
+## selector-selectCalcResult-subtraction
 
-### [~subtraction(data)]
+### selector-selectCalcResult-subtraction~subtraction(data)
 
 Function for calc subtraction
 
@@ -254,9 +272,9 @@ Function for calc subtraction
 @see [test]
 ```
 
-## [selector-selectCalcResult-turnDisplayDataToArray]
+## selector-selectCalcResult-turnDisplayDataToArray
 
-### [~turnDisplayDataToArray(data)]
+### selector-selectCalcResult-turnDisplayDataToArray~turnDisplayDataToArray(data)
 
 Function for convert input sting to specific arrays of numbers and strings (operators and operands)
 
@@ -273,9 +291,18 @@ Function for convert input sting to specific arrays of numbers and strings (oper
 @see [test]
 ```
 
-## [utils-DOMDidMount]
+## utils-calcFeaturesLogic
 
-### [~DOMDidMount()]
+### utils-calcFeaturesLogic~calcFeaturesLogic()
+
+For creating user's features pop-up panel. Rely on popper.js lib.
+
+**Kind**: inner method of [`utils-calcFeaturesLogic`]  
+**Returns**: `void` - popper.js logic
+
+## utils-DOMDidMount
+
+### utils-DOMDidMount~DOMDidMount()
 
 Must be call after App render
 
@@ -286,32 +313,32 @@ Must be call after App render
 @see [test]
 ```
 
-## [utils-mapAllDispatch]
+## utils-mapAllDispatch
 
 -   [utils-mapAllDispatch]
     -   [~Connect]
         -   [new Connect()]
     -   [~mapAllDispatch]
 
-### [~Connect]
+### utils-mapAllDispatch~Connect
 
 **Kind**: inner class of [`utils-mapAllDispatch`]
 
-#### [new Connect()]
+#### new Connect()
 
 Creating Singleton which compose all RTK actions we will use
 
 **Returns**: `Object` - collection of all dispathes needs for App
 
-### [~mapAllDispatch]
+### utils-mapAllDispatch~mapAllDispatch
 
 Singleton with all dispatch-actions
 
 **Kind**: inner constant of [`utils-mapAllDispatch`]
 
-## [utils-pipeFunction]
+## utils-pipeFunction
 
-### [~pipeFunction(funcs)]
+### utils-pipeFunction~pipeFunction(funcs)
 
 For pipeline a data thru all function from first to last
 
@@ -327,13 +354,13 @@ For pipeline a data thru all function from first to last
 @see [test]
 ```
 
-## [initialState]
+## initialState
 
 initialState
 
 **Kind**: global constant
 
-## [CalcStateInterface]
+## CalcStateInterface
 
 Interface for initialState
 
@@ -342,6 +369,7 @@ Interface for initialState
 <!-- LINKS -->
 
 [app-app]: #app-app
+[components-githubcorner]: #components-githubcorner
 [selector-selectcalcresult-addition]: #selector-selectcalcresult-addition
 [selector-selectcalcresult-correctbeginofsinglenegativenmbr]: #selector-selectcalcresult-correctbeginofsinglenegativenmbr
 [selector-selectcalcresult-division]: #selector-selectcalcresult-division
@@ -352,12 +380,14 @@ Interface for initialState
 [selector-selectcorrectregexpforcalcscreen]: #selector-selectcorrectregexpforcalcscreen
 [selector-selectcalcresult-subtraction]: #selector-selectcalcresult-subtraction
 [selector-selectcalcresult-turndisplaydatatoarray]: #selector-selectcalcresult-turndisplaydatatoarray
+[utils-calcfeatureslogic]: #utils-calcfeatureslogic
 [utils-domdidmount]: #utils-domdidmount
 [utils-mapalldispatch]: #utils-mapalldispatch
 [utils-pipefunction]: #utils-pipefunction
 [initialstate]: #initialstate
 [calcstateinterface]: #calcstateinterface
 [`app-app`]: #app-app
+[`components-githubcorner`]: #components-githubcorner
 [`selector-selectcalcresult-addition`]: #selector-selectcalcresult-addition
 [test]: https://github.com/zloid/math-calc/blob/master/__tests__/calcAppLogic/functions/pipeFunction.test.js
 [`selector-selectcalcresult-correctbeginofsinglenegativenmbr`]: #selector-selectcalcresult-correctbeginofsinglenegativenmbr
@@ -369,22 +399,10 @@ Interface for initialState
 [`selector-selectcorrectregexpforcalcscreen`]: #selector-selectcorrectregexpforcalcscreen
 [`selector-selectcalcresult-subtraction`]: #selector-selectcalcresult-subtraction
 [`selector-selectcalcresult-turndisplaydatatoarray`]: #selector-selectcalcresult-turndisplaydatatoarray
+[`utils-calcfeatureslogic`]: #utils-calcfeatureslogic
 [`utils-domdidmount`]: #utils-domdidmount
 [~connect]: #utils-mapalldispatchconnect
 [~mapalldispatch]: #utils-mapalldispatchmapalldispatch
 [`utils-mapalldispatch`]: #utils-mapalldispatch
 [`utils-pipefunction`]: #utils-pipefunction
-[~app(\[placetorender\])]: #app-appappplacetorender
-[~addition(data)]: #selector-selectcalcresult-additionadditiondata
-[~correctbeginofsinglenegativenmbr(data)]: #selector-selectcalcresult-correctbeginofsinglenegativenmbrcorrectbeginofsinglenegativenmbrdata
-[~division(data)]: #selector-selectcalcresult-divisiondivisiondata
-[~finalresult(data)]: #selector-selectcalcresult-finalresultfinalresultdata
-[~keyboardeventlistener()]: #utils-keyboardeventlistenerkeyboardeventlistener
-[~multiplication(data)]: #selector-selectcalcresult-multiplicationmultiplicationdata
-[~selectcalcresult(state)]: #selector-selectcalcresultselectcalcresultstate
-[~selectcorrectregexpforcalcscreen(state, payload)]: #selector-selectcorrectregexpforcalcscreenselectcorrectregexpforcalcscreenstate-payload
-[~subtraction(data)]: #selector-selectcalcresult-subtractionsubtractiondata
-[~turndisplaydatatoarray(data)]: #selector-selectcalcresult-turndisplaydatatoarrayturndisplaydatatoarraydata
-[~domdidmount()]: #utils-domdidmountdomdidmount
 [new connect()]: #new-connect
-[~pipefunction(funcs)]: #utils-pipefunctionpipefunctionfuncs

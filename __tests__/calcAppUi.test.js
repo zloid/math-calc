@@ -1,12 +1,11 @@
-import { screen, fireEvent } from '@testing-library/dom'
+import { screen } from '@testing-library/dom'
 import App from '../src/app/App'
-import { DOMDidMount } from '../src/utils/DOMDidMount'
-import '../src/app/app.css'
+// import { DOMDidMount } from '../src/utils/DOMDidMount'
 
 document.body.innerHTML = /* html */ '<div role="mainId" id="root"></div>'
 
 App('#root').render()
-DOMDidMount()
+// DOMDidMount()
 
 describe('div#root', () => {
     it('should exist', () => {
@@ -52,17 +51,25 @@ describe('App', () => {
     })
 })
 
-describe('App Features Area', () => {
+describe('GitHub corner at App calc', () => {
     it('should exist', () => {
-        expect(screen.getByRole(/featuresAreaForHover/i)).not.toBeNull()
-    })
-    it('main element is hover by default', () => {
-        // expect(screen.getByRole(/calcFeaturesForUsers/i)).toBeNull()
-
-        // fireEvent.mouseEnter(screen.getByRole(/featuresAreaForHover/i))
-
-        // expect(screen.getByRole(/calcFeaturesForUsers/i)).not.toBeNull()
+        // expect(screen.getByRole(/githubCorner/i)).not.toBeNull()
     })
 })
 
-screen.debug()
+describe('App Features Area', () => {
+    it('should exist', () => {
+        expect(screen.getByRole(/featuresAreaForHover/i)).not.toBeNull()
+        expect(screen.getByRole(/calcFeaturesForUsers/i)).not.toBeNull()
+    })
+    /* 
+    // todo
+    it('main element is hover by default', () => {
+         expect(screen.getByRole(/calcFeaturesForUsers/i)).toBeNull()
+
+         fireEvent.mouseEnter(screen.getByRole(/featuresAreaForHover/i))
+
+         expect(screen.getByRole(/calcFeaturesForUsers/i)).not.toBeNull()
+    })
+    */
+})

@@ -51,7 +51,9 @@ describe('Keyboard and Numpad is working for calc App', () => {
         // equal, numPad key Enter
         fireEvent.keyDown(document, { key: 'Enter', code: 'NumpadEnter' })
         // calc screen result
-        expect(screen.getByRole(/calcMainScreen/i).textContent.trim()).toBe('- 17')
+        expect(screen.getByRole(/calcMainScreen/i).textContent.trim()).toBe(
+            '- 17'
+        )
     })
     it('1234567890 + 1234567890 = 2469135780', () => {
         // main keyboard pressing: 123456789

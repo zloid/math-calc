@@ -146,8 +146,8 @@ describe('RegExp for calcScreen is work', () => {
         expect(data).toBe('0.7 + 0.')
     })
     it('".7 + ." ~> "0.7 + 0." ', () => {
-    // run function
-    const data = selectCorrectRegExpForCalcScreen({
+        // run function
+        const data = selectCorrectRegExpForCalcScreen({
             displayData: '.7 + .',
         })
         // expectation

@@ -25,7 +25,7 @@ describe('App initial screen value', () => {
     })
 })
 
-describe('App clear button', () => {    
+describe('App clear button', () => {
     it('click C(clear) button for clear calc screen', () => {
         //initial, must be here
         document.getElementById('root').innerHTML += ''
@@ -92,6 +92,8 @@ describe('App calc', () => {
         // click "="
         fireEvent.click(screen.getByRole(/^calcBtnEqual$/i))
         // calc screen result
-        expect(screen.getByRole(/calcMainScreen/i).textContent.trim()).toBe('11.31')
+        expect(screen.getByRole(/calcMainScreen/i).textContent.trim()).toBe(
+            '11.31'
+        )
     })
 })
