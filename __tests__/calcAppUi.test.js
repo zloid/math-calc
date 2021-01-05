@@ -53,7 +53,7 @@ describe('App', () => {
 
 describe('GitHub corner at App calc', () => {
     it('should exist', () => {
-        // expect(screen.getByRole(/githubCorner/i)).not.toBeNull()
+        expect(screen.getByRole(/githubCorner/i)).not.toBeNull()
     })
 })
 

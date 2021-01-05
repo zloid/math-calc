@@ -37,7 +37,7 @@
 
 ## Modules
 
-| Module                                                       | Description |
+|                                                              |             |
 | ------------------------------------------------------------ | ----------- |
 | [app-App]                                                    |
 | [components-GithubCorner]                                    |
