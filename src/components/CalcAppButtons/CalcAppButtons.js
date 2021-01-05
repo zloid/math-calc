@@ -1,25 +1,184 @@
-export const CalcAppButtons = () => /* html */ `<div>
+export const CalcAppButtons = () => /*html*/ `<div>    
+    <div class="row">
+        <div class="col">
+            <button
+                role="calcBtn7"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                7
+            </button>
+        </div>
 
-<button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn0">0</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn1">1</button>
+        <div class="col">
+            <button
+                role="calcBtn8"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                8
+            </button>
+        </div>
 
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn2">2</button>
+        <div class="col">
+            <button
+                role="calcBtn9"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                9
+            </button>
+        </div>
 
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn3">3</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn4">4</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn5">5</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn6">6</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn7">7</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn8">8</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtn9">9</button>
+        <div class="col">
+            <button
+                role="calcBtnDivision"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                ÷
+            </button>
+        </div>
+    </div>
 
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnPlus">+</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnMinus">-</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnMultiply">*</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnDivision">÷</button>
+    <div class="row">
+        <div class="col">
+            <button
+                role="calcBtn4"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                4
+            </button>
+        </div>
 
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.clearAll()" role="calcBtnClear">C</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.doEqual()" role="calcBtnEqual">=</button>
-            <button onclick="globalThis.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)" role="calcBtnPoint">.</button>
+        <div class="col">
+            <button
+                role="calcBtn5"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                5
+            </button>
+        </div>
 
+        <div class="col">
+            <button
+                role="calcBtn6"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                6
+            </button>
+        </div>
+
+        <div class="col">
+            <button
+                role="calcBtnMultiply"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                *
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button
+                role="calcBtn1"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                1
+            </button>
+        </div>
+
+        <div class="col">
+            <button
+                role="calcBtn2"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                2
+            </button>
+        </div>
+
+        <div class="col">
+            <button
+                role="calcBtn3"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                3
+            </button>
+        </div>
+
+        <div class="col">
+            <button
+                role="calcBtnMinus"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                -
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <button
+                role="calcBtn0"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                0
+            </button>
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button
+                role="calcBtnClear"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.clearAll()"
+            >
+                C
+            </button>
+        </div>
+
+        <div class="col">
+            <button
+                role="calcBtnEqual"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.doEqual()"
+            >
+                =
+            </button>
+        </div>
+
+        <div class="col">
+            <button
+                role="calcBtnPoint"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                .
+            </button>
+        </div>
+
+        <div class="col">
+            <button
+                role="calcBtnPlus"
+                class="calc-btn btn btn-outline-secondary btn-lg btn-block"
+                onclick="window.mapAllDispatch.buttonToDisplay.getBtnValue(this.textContent)"
+            >
+                +
+            </button>
+        </div>
+    </div>
 </div>`
