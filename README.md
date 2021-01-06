@@ -37,7 +37,7 @@
 ## API Reference
 
 ## Modules
-Module | 
+Module | Description
 ------ | -----------
 [app-App] | 
 [components-GithubCorner] | 
