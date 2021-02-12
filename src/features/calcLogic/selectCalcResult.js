@@ -30,8 +30,8 @@ export const selectCalcResult = ({ displayData }) => {
     displayData = pipeFunction([
         correctBeginOfSingleNegativeNmbr,
         turnDisplayDataToArray,
-        multiplication,
         division,
+        multiplication,
         subtraction,
         addition,
     ])(displayData)

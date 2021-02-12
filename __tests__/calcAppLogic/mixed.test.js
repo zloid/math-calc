@@ -96,4 +96,41 @@ describe('App calc', () => {
             '11.31'
         )
     })
+    it('300 / 15000 * 100 = 2', () => {
+        fireEvent.click(screen.getByRole(/^calcBtn3$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn0$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn0$/i))
+        fireEvent.click(screen.getByRole(/^calcBtnDivision$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn1$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn5$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn0$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn0$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn0$/i))
+        fireEvent.click(screen.getByRole(/^calcBtnMultiply$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn1$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn0$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn0$/i))
+        // click on screen
+        fireEvent.click(screen.getByRole(/^calcMainScreen$/i))
+        // calc screen result
+        expect(screen.getByRole(/calcMainScreen/i).textContent.trim()).toBe('2')
+    })
+    it('10 / 2 * 3 / 5 * 6 / 2 = 9', () => {
+        fireEvent.click(screen.getByRole(/^calcBtn1$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn0$/i))
+        fireEvent.click(screen.getByRole(/^calcBtnDivision$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn2$/i))
+        fireEvent.click(screen.getByRole(/^calcBtnMultiply$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn3$/i))
+        fireEvent.click(screen.getByRole(/^calcBtnDivision$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn5$/i))
+        fireEvent.click(screen.getByRole(/^calcBtnMultiply$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn6$/i))
+        fireEvent.click(screen.getByRole(/^calcBtnDivision$/i))
+        fireEvent.click(screen.getByRole(/^calcBtn2$/i))
+        // equal
+        fireEvent.click(screen.getByRole(/^calcBtnEqual$/i))
+        // calc screen result
+        expect(screen.getByRole(/calcMainScreen/i).textContent.trim()).toBe('9')
+    })
 })

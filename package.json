@@ -1,6 +1,6 @@
 {
     "name": "modern-vanilla-js-math-calc",
-    "version": "0.2.33",
+    "version": "0.2.34",
     "description": "math_calc",
     "main": "index.js",
     "scripts": {
@@ -9,6 +9,7 @@
         "checkjs": "tsc --allowJs --checkJs --noEmit --moduleResolution node --target es6 src/*.js",
         "lint": "eslint src --ext .js && npm run checkjs",
         "build": "webpack",
+        "deploy": "npm run build && git subtree push --prefix public origin gh-pages",
         "serve": "serve",
         "clean:docs": "node ./scripts/rmrf.js ./docs",
         "jsdoc": "jsdoc -c jsdoc-config.json",
